@@ -1,0 +1,710 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		234500971E5CBF2700954BC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234500961E5CBF2700954BC8 /* AppDelegate.swift */; };
+		234500991E5CBF2700954BC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234500981E5CBF2700954BC8 /* ViewController.swift */; };
+		2345009C1E5CBF2700954BC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2345009A1E5CBF2700954BC8 /* Main.storyboard */; };
+		2345009F1E5CBF2700954BC8 /* DesafioSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2345009D1E5CBF2700954BC8 /* DesafioSwift.xcdatamodeld */; };
+		234500A11E5CBF2700954BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 234500A01E5CBF2700954BC8 /* Assets.xcassets */; };
+		234500A41E5CBF2700954BC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234500A21E5CBF2700954BC8 /* LaunchScreen.storyboard */; };
+		234500AF1E5CBF2800954BC8 /* DesafioSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234500AE1E5CBF2800954BC8 /* DesafioSwiftTests.swift */; };
+		234500BA1E5CBF2800954BC8 /* DesafioSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234500B91E5CBF2800954BC8 /* DesafioSwiftUITests.swift */; };
+		234500CC1E5CC0C300954BC8 /* reddit-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 234500C91E5CC0C300954BC8 /* reddit-icon.png */; };
+		234500CD1E5CC0C300954BC8 /* reddit-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 234500CA1E5CC0C300954BC8 /* reddit-logo.png */; };
+		234500CE1E5CC0C300954BC8 /* reddit-puppet.png in Resources */ = {isa = PBXBuildFile; fileRef = 234500CB1E5CC0C300954BC8 /* reddit-puppet.png */; };
+		234500D91E5CCF9500954BC8 /* NSDateExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234500D81E5CCF9500954BC8 /* NSDateExtended.swift */; };
+		234500DB1E5CCF9A00954BC8 /* Reddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234500DA1E5CCF9A00954BC8 /* Reddit.swift */; };
+		234500DD1E5CCFA200954BC8 /* RedditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234500DC1E5CCFA200954BC8 /* RedditTableViewCell.swift */; };
+		23EE42D61E5CDC6400AF3379 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23EE42D51E5CDC6400AF3379 /* Alamofire.framework */; };
+		23EE42D81E5CE3BA00AF3379 /* UIImageExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE42D71E5CE3BA00AF3379 /* UIImageExtended.swift */; };
+		93F46A957D5D24014B5FEE40 /* Pods_DesafioSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC360211E94767A43B77CB54 /* Pods_DesafioSwift.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		234500AB1E5CBF2800954BC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2345008B1E5CBF2700954BC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 234500921E5CBF2700954BC8;
+			remoteInfo = DesafioSwift;
+		};
+		234500B61E5CBF2800954BC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2345008B1E5CBF2700954BC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 234500921E5CBF2700954BC8;
+			remoteInfo = DesafioSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		234500931E5CBF2700954BC8 /* DesafioSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		234500961E5CBF2700954BC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		234500981E5CBF2700954BC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2345009B1E5CBF2700954BC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2345009E1E5CBF2700954BC8 /* DesafioSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DesafioSwift.xcdatamodel; sourceTree = "<group>"; };
+		234500A01E5CBF2700954BC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		234500A31E5CBF2700954BC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		234500A51E5CBF2700954BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		234500AA1E5CBF2800954BC8 /* DesafioSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		234500AE1E5CBF2800954BC8 /* DesafioSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioSwiftTests.swift; sourceTree = "<group>"; };
+		234500B01E5CBF2800954BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		234500B51E5CBF2800954BC8 /* DesafioSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		234500B91E5CBF2800954BC8 /* DesafioSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioSwiftUITests.swift; sourceTree = "<group>"; };
+		234500BB1E5CBF2800954BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		234500C91E5CC0C300954BC8 /* reddit-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reddit-icon.png"; sourceTree = "<group>"; };
+		234500CA1E5CC0C300954BC8 /* reddit-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reddit-logo.png"; sourceTree = "<group>"; };
+		234500CB1E5CC0C300954BC8 /* reddit-puppet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reddit-puppet.png"; sourceTree = "<group>"; };
+		234500D81E5CCF9500954BC8 /* NSDateExtended.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtended.swift; sourceTree = "<group>"; };
+		234500DA1E5CCF9A00954BC8 /* Reddit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reddit.swift; path = Domain/Reddit.swift; sourceTree = "<group>"; };
+		234500DC1E5CCFA200954BC8 /* RedditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RedditTableViewCell.swift; path = Cells/RedditTableViewCell.swift; sourceTree = "<group>"; };
+		23EE42D51E5CDC6400AF3379 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		23EE42D71E5CE3BA00AF3379 /* UIImageExtended.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtended.swift; sourceTree = "<group>"; };
+		5981C2F570C1B50102D13C2B /* Pods-DesafioSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesafioSwift/Pods-DesafioSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		AC360211E94767A43B77CB54 /* Pods_DesafioSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B81B51ED4E5CC6EB5E2D2433 /* Pods-DesafioSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DesafioSwift/Pods-DesafioSwift.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		234500901E5CBF2700954BC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23EE42D61E5CDC6400AF3379 /* Alamofire.framework in Frameworks */,
+				93F46A957D5D24014B5FEE40 /* Pods_DesafioSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		234500A71E5CBF2800954BC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		234500B21E5CBF2800954BC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18EE7C37754D3B580084D575 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5981C2F570C1B50102D13C2B /* Pods-DesafioSwift.debug.xcconfig */,
+				B81B51ED4E5CC6EB5E2D2433 /* Pods-DesafioSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2345008A1E5CBF2700954BC8 = {
+			isa = PBXGroup;
+			children = (
+				234500951E5CBF2700954BC8 /* DesafioSwift */,
+				234500AD1E5CBF2800954BC8 /* DesafioSwiftTests */,
+				234500B81E5CBF2800954BC8 /* DesafioSwiftUITests */,
+				234500941E5CBF2700954BC8 /* Products */,
+				18EE7C37754D3B580084D575 /* Pods */,
+				2C5F3AC55662E96801287DED /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		234500941E5CBF2700954BC8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				234500931E5CBF2700954BC8 /* DesafioSwift.app */,
+				234500AA1E5CBF2800954BC8 /* DesafioSwiftTests.xctest */,
+				234500B51E5CBF2800954BC8 /* DesafioSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		234500951E5CBF2700954BC8 /* DesafioSwift */ = {
+			isa = PBXGroup;
+			children = (
+				234500D71E5CCF9500954BC8 /* Extensions */,
+				234500D21E5CC76600954BC8 /* Domain */,
+				234500CF1E5CC5E800954BC8 /* Cells */,
+				234500C71E5CC0C300954BC8 /* Resources */,
+				234500961E5CBF2700954BC8 /* AppDelegate.swift */,
+				234500981E5CBF2700954BC8 /* ViewController.swift */,
+				2345009A1E5CBF2700954BC8 /* Main.storyboard */,
+				234500A01E5CBF2700954BC8 /* Assets.xcassets */,
+				234500A21E5CBF2700954BC8 /* LaunchScreen.storyboard */,
+				234500A51E5CBF2700954BC8 /* Info.plist */,
+				2345009D1E5CBF2700954BC8 /* DesafioSwift.xcdatamodeld */,
+			);
+			path = DesafioSwift;
+			sourceTree = "<group>";
+		};
+		234500AD1E5CBF2800954BC8 /* DesafioSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				234500AE1E5CBF2800954BC8 /* DesafioSwiftTests.swift */,
+				234500B01E5CBF2800954BC8 /* Info.plist */,
+			);
+			path = DesafioSwiftTests;
+			sourceTree = "<group>";
+		};
+		234500B81E5CBF2800954BC8 /* DesafioSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				234500B91E5CBF2800954BC8 /* DesafioSwiftUITests.swift */,
+				234500BB1E5CBF2800954BC8 /* Info.plist */,
+			);
+			path = DesafioSwiftUITests;
+			sourceTree = "<group>";
+		};
+		234500C71E5CC0C300954BC8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				234500C81E5CC0C300954BC8 /* Reddit Icons */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		234500C81E5CC0C300954BC8 /* Reddit Icons */ = {
+			isa = PBXGroup;
+			children = (
+				234500C91E5CC0C300954BC8 /* reddit-icon.png */,
+				234500CA1E5CC0C300954BC8 /* reddit-logo.png */,
+				234500CB1E5CC0C300954BC8 /* reddit-puppet.png */,
+			);
+			path = "Reddit Icons";
+			sourceTree = "<group>";
+		};
+		234500CF1E5CC5E800954BC8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				234500DC1E5CCFA200954BC8 /* RedditTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		234500D21E5CC76600954BC8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				234500DA1E5CCF9A00954BC8 /* Reddit.swift */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		234500D71E5CCF9500954BC8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				234500D81E5CCF9500954BC8 /* NSDateExtended.swift */,
+				23EE42D71E5CE3BA00AF3379 /* UIImageExtended.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2C5F3AC55662E96801287DED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23EE42D51E5CDC6400AF3379 /* Alamofire.framework */,
+				AC360211E94767A43B77CB54 /* Pods_DesafioSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		234500921E5CBF2700954BC8 /* DesafioSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 234500BE1E5CBF2800954BC8 /* Build configuration list for PBXNativeTarget "DesafioSwift" */;
+			buildPhases = (
+				938E61FE035CE7A8AB599D75 /* [CP] Check Pods Manifest.lock */,
+				2345008F1E5CBF2700954BC8 /* Sources */,
+				234500901E5CBF2700954BC8 /* Frameworks */,
+				234500911E5CBF2700954BC8 /* Resources */,
+				404881E0755A39B1817EC40D /* [CP] Embed Pods Frameworks */,
+				8C22B0FFC8E26F33512263D8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DesafioSwift;
+			productName = DesafioSwift;
+			productReference = 234500931E5CBF2700954BC8 /* DesafioSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		234500A91E5CBF2800954BC8 /* DesafioSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 234500C11E5CBF2800954BC8 /* Build configuration list for PBXNativeTarget "DesafioSwiftTests" */;
+			buildPhases = (
+				234500A61E5CBF2800954BC8 /* Sources */,
+				234500A71E5CBF2800954BC8 /* Frameworks */,
+				234500A81E5CBF2800954BC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				234500AC1E5CBF2800954BC8 /* PBXTargetDependency */,
+			);
+			name = DesafioSwiftTests;
+			productName = DesafioSwiftTests;
+			productReference = 234500AA1E5CBF2800954BC8 /* DesafioSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		234500B41E5CBF2800954BC8 /* DesafioSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 234500C41E5CBF2800954BC8 /* Build configuration list for PBXNativeTarget "DesafioSwiftUITests" */;
+			buildPhases = (
+				234500B11E5CBF2800954BC8 /* Sources */,
+				234500B21E5CBF2800954BC8 /* Frameworks */,
+				234500B31E5CBF2800954BC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				234500B71E5CBF2800954BC8 /* PBXTargetDependency */,
+			);
+			name = DesafioSwiftUITests;
+			productName = DesafioSwiftUITests;
+			productReference = 234500B51E5CBF2800954BC8 /* DesafioSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2345008B1E5CBF2700954BC8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Rodrigo Kapobel";
+				TargetAttributes = {
+					234500921E5CBF2700954BC8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 5Y65PQ475R;
+						ProvisioningStyle = Automatic;
+					};
+					234500A91E5CBF2800954BC8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 234500921E5CBF2700954BC8;
+					};
+					234500B41E5CBF2800954BC8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 234500921E5CBF2700954BC8;
+					};
+				};
+			};
+			buildConfigurationList = 2345008E1E5CBF2700954BC8 /* Build configuration list for PBXProject "DesafioSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2345008A1E5CBF2700954BC8;
+			productRefGroup = 234500941E5CBF2700954BC8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				234500921E5CBF2700954BC8 /* DesafioSwift */,
+				234500A91E5CBF2800954BC8 /* DesafioSwiftTests */,
+				234500B41E5CBF2800954BC8 /* DesafioSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		234500911E5CBF2700954BC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				234500CC1E5CC0C300954BC8 /* reddit-icon.png in Resources */,
+				234500A41E5CBF2700954BC8 /* LaunchScreen.storyboard in Resources */,
+				234500A11E5CBF2700954BC8 /* Assets.xcassets in Resources */,
+				234500CE1E5CC0C300954BC8 /* reddit-puppet.png in Resources */,
+				234500CD1E5CC0C300954BC8 /* reddit-logo.png in Resources */,
+				2345009C1E5CBF2700954BC8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		234500A81E5CBF2800954BC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		234500B31E5CBF2800954BC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		404881E0755A39B1817EC40D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DesafioSwift/Pods-DesafioSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C22B0FFC8E26F33512263D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DesafioSwift/Pods-DesafioSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		938E61FE035CE7A8AB599D75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2345008F1E5CBF2700954BC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				234500DB1E5CCF9A00954BC8 /* Reddit.swift in Sources */,
+				2345009F1E5CBF2700954BC8 /* DesafioSwift.xcdatamodeld in Sources */,
+				234500991E5CBF2700954BC8 /* ViewController.swift in Sources */,
+				234500971E5CBF2700954BC8 /* AppDelegate.swift in Sources */,
+				23EE42D81E5CE3BA00AF3379 /* UIImageExtended.swift in Sources */,
+				234500D91E5CCF9500954BC8 /* NSDateExtended.swift in Sources */,
+				234500DD1E5CCFA200954BC8 /* RedditTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		234500A61E5CBF2800954BC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				234500AF1E5CBF2800954BC8 /* DesafioSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		234500B11E5CBF2800954BC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				234500BA1E5CBF2800954BC8 /* DesafioSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		234500AC1E5CBF2800954BC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 234500921E5CBF2700954BC8 /* DesafioSwift */;
+			targetProxy = 234500AB1E5CBF2800954BC8 /* PBXContainerItemProxy */;
+		};
+		234500B71E5CBF2800954BC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 234500921E5CBF2700954BC8 /* DesafioSwift */;
+			targetProxy = 234500B61E5CBF2800954BC8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2345009A1E5CBF2700954BC8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2345009B1E5CBF2700954BC8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		234500A21E5CBF2700954BC8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				234500A31E5CBF2700954BC8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		234500BC1E5CBF2800954BC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		234500BD1E5CBF2800954BC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		234500BF1E5CBF2800954BC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5981C2F570C1B50102D13C2B /* Pods-DesafioSwift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5Y65PQ475R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+				);
+				INFOPLIST_FILE = DesafioSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rokdev.DesafioSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		234500C01E5CBF2800954BC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B81B51ED4E5CC6EB5E2D2433 /* Pods-DesafioSwift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5Y65PQ475R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+				);
+				INFOPLIST_FILE = DesafioSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rokdev.DesafioSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		234500C21E5CBF2800954BC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DesafioSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rokdev.DesafioSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesafioSwift.app/DesafioSwift";
+			};
+			name = Debug;
+		};
+		234500C31E5CBF2800954BC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DesafioSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rokdev.DesafioSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesafioSwift.app/DesafioSwift";
+			};
+			name = Release;
+		};
+		234500C51E5CBF2800954BC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = DesafioSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rokdev.DesafioSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DesafioSwift;
+			};
+			name = Debug;
+		};
+		234500C61E5CBF2800954BC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = DesafioSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rokdev.DesafioSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DesafioSwift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2345008E1E5CBF2700954BC8 /* Build configuration list for PBXProject "DesafioSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				234500BC1E5CBF2800954BC8 /* Debug */,
+				234500BD1E5CBF2800954BC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		234500BE1E5CBF2800954BC8 /* Build configuration list for PBXNativeTarget "DesafioSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				234500BF1E5CBF2800954BC8 /* Debug */,
+				234500C01E5CBF2800954BC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		234500C11E5CBF2800954BC8 /* Build configuration list for PBXNativeTarget "DesafioSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				234500C21E5CBF2800954BC8 /* Debug */,
+				234500C31E5CBF2800954BC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		234500C41E5CBF2800954BC8 /* Build configuration list for PBXNativeTarget "DesafioSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				234500C51E5CBF2800954BC8 /* Debug */,
+				234500C61E5CBF2800954BC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2345009D1E5CBF2700954BC8 /* DesafioSwift.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2345009E1E5CBF2700954BC8 /* DesafioSwift.xcdatamodel */,
+			);
+			currentVersion = 2345009E1E5CBF2700954BC8 /* DesafioSwift.xcdatamodel */;
+			path = DesafioSwift.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2345008B1E5CBF2700954BC8 /* Project object */;
+}

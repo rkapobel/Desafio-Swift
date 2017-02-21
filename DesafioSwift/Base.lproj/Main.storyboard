@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DesafioSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reddit-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ypw-E9-vyz">
+                                <rect key="frame" x="20" y="20" width="984" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ypw-E9-vyz" secondAttribute="height" multiplier="984:47" id="hQf-tS-p2M"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jhf-FR-kqe">
+                                <rect key="frame" x="20" y="75" width="984" height="673"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RedditTableViewCell" rowHeight="117" id="PGQ-0y-qJq" customClass="RedditTableViewCell" customModule="DesafioSwift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="984" height="117"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PGQ-0y-qJq" id="I24-3e-RY4">
+                                            <rect key="frame" x="0.0" y="0.0" width="984" height="116"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reddit-puppet.png" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-3D-S2n">
+                                                    <rect key="frame" x="8" y="8" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="5cm-3D-S2n" secondAttribute="height" multiplier="1:1" id="Ae6-IE-aXK"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ay4-3p-qSd">
+                                                    <rect key="frame" x="116" y="8" width="860" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" red="0.00046293712123535169" green="0.21218804227060106" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85z-SV-fkm">
+                                                    <rect key="frame" x="116" y="37.5" width="860" height="41.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsX-1A-Qru">
+                                                    <rect key="frame" x="116" y="87" width="860" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PsX-1A-Qru" firstAttribute="trailing" secondItem="I24-3e-RY4" secondAttribute="trailingMargin" id="5c9-V9-H3o"/>
+                                                <constraint firstItem="85z-SV-fkm" firstAttribute="trailing" secondItem="I24-3e-RY4" secondAttribute="trailingMargin" id="Cpr-hD-sVF"/>
+                                                <constraint firstItem="PsX-1A-Qru" firstAttribute="leading" secondItem="5cm-3D-S2n" secondAttribute="trailing" constant="8" id="HVt-gQ-Hge"/>
+                                                <constraint firstItem="5cm-3D-S2n" firstAttribute="bottom" secondItem="I24-3e-RY4" secondAttribute="bottomMargin" id="UIV-FN-Hzj"/>
+                                                <constraint firstItem="ay4-3p-qSd" firstAttribute="trailing" secondItem="I24-3e-RY4" secondAttribute="trailingMargin" id="XVA-VL-FXa"/>
+                                                <constraint firstItem="5cm-3D-S2n" firstAttribute="leading" secondItem="I24-3e-RY4" secondAttribute="leadingMargin" id="aJ5-x8-KVU"/>
+                                                <constraint firstItem="85z-SV-fkm" firstAttribute="top" secondItem="ay4-3p-qSd" secondAttribute="bottom" constant="8" id="cFp-Im-7Ck"/>
+                                                <constraint firstItem="ay4-3p-qSd" firstAttribute="leading" secondItem="5cm-3D-S2n" secondAttribute="trailing" constant="8" id="gQm-Rf-sHk"/>
+                                                <constraint firstItem="ay4-3p-qSd" firstAttribute="top" secondItem="I24-3e-RY4" secondAttribute="topMargin" id="hKx-zf-zjw"/>
+                                                <constraint firstItem="PsX-1A-Qru" firstAttribute="top" secondItem="85z-SV-fkm" secondAttribute="bottom" constant="8" id="j9x-TM-RIS"/>
+                                                <constraint firstItem="PsX-1A-Qru" firstAttribute="bottom" secondItem="I24-3e-RY4" secondAttribute="bottomMargin" id="pgy-lL-Yr7"/>
+                                                <constraint firstItem="5cm-3D-S2n" firstAttribute="top" secondItem="I24-3e-RY4" secondAttribute="topMargin" id="qZ0-ox-K08"/>
+                                                <constraint firstItem="85z-SV-fkm" firstAttribute="leading" secondItem="5cm-3D-S2n" secondAttribute="trailing" constant="8" id="yMr-qo-x3H"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgViewThumbnail" destination="5cm-3D-S2n" id="KrG-0X-BKA"/>
+                                            <outlet property="lblCommentsCount" destination="PsX-1A-Qru" id="oc8-U2-0bH"/>
+                                            <outlet property="lblInfo" destination="85z-SV-fkm" id="vMF-eu-pzW"/>
+                                            <outlet property="lblTitle" destination="ay4-3p-qSd" id="F5y-Xu-8ow"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ypw-E9-vyz" secondAttribute="trailing" constant="20" id="L2B-XM-15u"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jhf-FR-kqe" secondAttribute="bottom" constant="20" id="MFr-Ty-lsp"/>
+                            <constraint firstItem="Ypw-E9-vyz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="41:32" id="XtK-qk-3Xg"/>
+                            <constraint firstItem="jhf-FR-kqe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="g3K-kG-vd0"/>
+                            <constraint firstAttribute="trailing" secondItem="jhf-FR-kqe" secondAttribute="trailing" constant="20" id="gIQ-MR-NOM"/>
+                            <constraint firstItem="Ypw-E9-vyz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="hvy-T5-tf5"/>
+                            <constraint firstItem="jhf-FR-kqe" firstAttribute="top" secondItem="Ypw-E9-vyz" secondAttribute="bottom" constant="8" id="hwp-vh-9U5"/>
+                            <constraint firstItem="Ypw-E9-vyz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wd5-Wb-D8W"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1024" height="768"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136" y="138.53073463268368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="reddit-logo.png" width="1280" height="427"/>
+        <image name="reddit-puppet.png" width="310" height="310"/>
+    </resources>
+</document>
