@@ -23,9 +23,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reddit-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ypw-E9-vyz">
-                                <rect key="frame" x="20" y="20" width="984" height="88"/>
+                                <rect key="frame" x="20" y="20" width="984" height="73"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="rRl-ur-inX"/>
+                                    <constraint firstAttribute="height" constant="73" id="rRl-ur-inX"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jhf-FR-kqe">
@@ -105,7 +105,7 @@
                             <constraint firstItem="jhf-FR-kqe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="g3K-kG-vd0"/>
                             <constraint firstAttribute="trailing" secondItem="jhf-FR-kqe" secondAttribute="trailing" id="gIQ-MR-NOM"/>
                             <constraint firstItem="Ypw-E9-vyz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="hvy-T5-tf5"/>
-                            <constraint firstItem="jhf-FR-kqe" firstAttribute="top" secondItem="Ypw-E9-vyz" secondAttribute="bottom" constant="8" id="hwp-vh-9U5"/>
+                            <constraint firstItem="jhf-FR-kqe" firstAttribute="top" secondItem="Ypw-E9-vyz" secondAttribute="bottom" constant="23" id="hwp-vh-9U5"/>
                             <constraint firstItem="Ypw-E9-vyz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wd5-Wb-D8W"/>
                         </constraints>
                     </view>

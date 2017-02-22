@@ -25,27 +25,23 @@ class RedditDAO: NSObject {
         managedContext = appDelegate.persistentContainer.viewContext
     }
     
-    func save(withId id: String,
-              author: String,
-              title: String,
-              createdUtc: Double,
-              numComments: UInt32,
-              subredditNamePrefixed: String,
-              thumbnailSource: String) {
+    func save(withDict dict: [String: Any]) {
+        
+        let strId: String = dict["id"] as! String
     
-        let managedReddits: [NSManagedObject] = get(redditsWithPredicate:"id = %@", values: id)
+        let managedReddits: [NSManagedObject] = get(redditsWithPredicate:"id = %@", values: strId)
         
         if managedReddits.count > 0 {
             
             let managedReddit: NSManagedObject = managedReddits[0]
             
-            managedReddit.setValue(id, forKey: "id")
-            managedReddit.setValue(author, forKey: "author")
-            managedReddit.setValue(title, forKey: "title")
-            managedReddit.setValue(createdUtc, forKey: "createdUtc")
-            managedReddit.setValue(numComments, forKey: "numComments")
-            managedReddit.setValue(subredditNamePrefixed, forKey: "subredditNamePrefixed")
-            managedReddit.setValue(thumbnailSource, forKey: "thumbnailSource")
+            managedReddit.setValue(strId, forKey: "id")
+            managedReddit.setValue(dict["author"] as! String, forKey: "author")
+            managedReddit.setValue(dict["title"] as! String, forKey: "title")
+            managedReddit.setValue(dict["subreddit_name_prefixed"] as! String, forKey: "subredditNamePrefixed")
+            managedReddit.setValue(dict["thumbnail"] as! String, forKey: "thumbnailSource")
+            managedReddit.setValue(dict["created_utc"] as! Double, forKey: "createdUtc")
+            managedReddit.setValue(dict["num_comments"] as! Int32, forKey: "numComments")
             
             update()
             
@@ -56,13 +52,13 @@ class RedditDAO: NSObject {
         
         let redditManaged = NSManagedObject(entity: entity!, insertInto: managedContext)
         
-        redditManaged.setValue(id, forKey: "id")
-        redditManaged.setValue(author, forKey: "author")
-        redditManaged.setValue(title, forKey: "title")
-        redditManaged.setValue(createdUtc, forKey: "createdUtc")
-        redditManaged.setValue(numComments, forKey: "numComments")
-        redditManaged.setValue(subredditNamePrefixed, forKey: "subredditNamePrefixed")
-        redditManaged.setValue(thumbnailSource, forKey: "thumbnailSource")
+        redditManaged.setValue(dict["id"] as! String, forKey: "id")
+        redditManaged.setValue(dict["author"] as! String, forKey: "author")
+        redditManaged.setValue(dict["title"] as! String, forKey: "title")
+        redditManaged.setValue(dict["subreddit_name_prefixed"] as! String, forKey: "subredditNamePrefixed")
+        redditManaged.setValue(dict["thumbnail"] as! String, forKey: "thumbnailSource")
+        redditManaged.setValue(dict["created_utc"] as! Double, forKey: "createdUtc")
+        redditManaged.setValue(dict["num_comments"] as! Int32, forKey: "numComments")
     
         do {
             try managedContext.save()
@@ -99,6 +95,18 @@ class RedditDAO: NSObject {
         return reddits
     }
     
+    func getAllById() -> [String: NSManagedObject] {
+        let allStoredReddits: [NSManagedObject] = get(redditsWithPredicate: nil)
+        
+        var redditsById: [String: NSManagedObject] = [String: NSManagedObject]()
+
+        for reddit in allStoredReddits {
+            redditsById[reddit.value(forKey: "id") as! String] = reddit
+        }
+        
+        return redditsById
+    }
+    
     func redditExists(redditWithId id: String) -> Bool {
         var exists: Bool! = false
         
@@ -109,7 +117,7 @@ class RedditDAO: NSObject {
         return exists
     }
     
-    func delete(reddit: Reddit) {
+    func delete(reddit: NSManagedObject) {
         
         let appDelegate =
             UIApplication.shared.delegate as! AppDelegate

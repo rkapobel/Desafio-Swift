@@ -72,4 +72,16 @@ class RedditManaged: NSObject {
         }
         return createdUtcValue!
     }
+    
+    func update(withDict dict: [String: Any]) {
+        managedObject.setValue(dict["id"] as! String, forKey: "id")
+        managedObject.setValue(dict["author"] as! String, forKey: "author")
+        managedObject.setValue(dict["title"] as! String, forKey: "title")
+        managedObject.setValue(dict["subreddit_name_prefixed"] as! String, forKey: "subredditNamePrefixed")
+        managedObject.setValue(dict["thumbnail"] as! String, forKey: "thumbnailSource")
+        managedObject.setValue(dict["created_utc"] as! Double, forKey: "createdUtc")
+        managedObject.setValue(dict["num_comments"] as! Int32, forKey: "numComments")
+        
+        RedditDAO().update()
+    }
 }

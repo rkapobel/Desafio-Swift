@@ -22,6 +22,8 @@ class ServiceDataManager: NSObject {
 
                 let dict: [String: Any]? = Dictionary().convertToDictionary(fromData: JSONData)
 
+                var allRedditsById: [String: NSManagedObject] = RedditDAO().getAllById()
+                
                 if let letDict = dict {
                     
                     let dictDataOne: [String: Any]? = letDict["data"] as? [String: Any]
@@ -39,17 +41,17 @@ class ServiceDataManager: NSObject {
                                         let dictOfValues = value as? [String: Any]
                                         
                                         if let letDictOfValues = dictOfValues {
-
-                                            // MARK: 1: Reddit DAO se encarga de todo: insertar o actualizar
-                                            RedditDAO().save(withId: letDictOfValues["id"] as! String,
-                                                             author: letDictOfValues["author"] as! String,
-                                                             title: letDictOfValues["title"] as! String,
-                                                             createdUtc: letDictOfValues["created_utc"] as! Double,
-                                                             numComments: UInt32(letDictOfValues["num_comments"] as! Int32),
-                                                             subredditNamePrefixed: letDictOfValues["subreddit_name_prefixed"] as! String,
-                                                             thumbnailSource: letDictOfValues["thumbnail"] as! String)
+                            
+                                            let idStr = letDictOfValues["id"] as! String
                                             
-                                            // MARK: Podria agregarse una logica de eliminacion de reddits. Si un reddit fue eliminado del servidor, entonces ese reddit ya no tiene que estar publicado y debe eliminarse de la base de datos junto con el thumbnail si existiese.
+                                            let managedObject: NSManagedObject? = allRedditsById.removeValue(forKey: idStr)
+                                            
+                                            if let letManagedObject = managedObject {
+                                                let redditManaged: RedditManaged = RedditManaged(withManagedObject: letManagedObject)
+                                                redditManaged.update(withDict: letDictOfValues)
+                                            }else {
+                                                RedditDAO().save(withDict: letDictOfValues)
+                                            }
                                         }
                                     }
                                 }
@@ -57,6 +59,14 @@ class ServiceDataManager: NSObject {
                         }
                     }
                 }
+                
+                // MARK: los reddits restantes deben ser eliminados junto con sus imagenes.
+                
+                for (key, reddit) in allRedditsById {
+                    FileManager().deleteFile(withName: key, fromFolder: Constants.FilesFolder)
+                    RedditDAO().delete(reddit: reddit)
+                }
+                
             }else {
                 NSLog("service response error: %@", response.error?.localizedDescription ?? "error without description")
             }
