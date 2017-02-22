@@ -32,10 +32,10 @@ class RedditTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func updateCellWithReddit(_ reddit: Reddit!) {
+    func updateCell(withReddit reddit: Reddit!) {
         // MARK: do the thumbnailSource download with alamofire sdk
         
-        if reddit?.thumbnailSource != nil && (reddit?.thumbnailSource.characters.count)! > 0 {
+        if reddit?.thumbnailSource != nil && (reddit?.thumbnailSource?.characters.count)! > 0 {
             let image: UIImage? = FileManager().getImage(withName: (reddit?.id)!, inFolder: Constants.Folders.FilesFolder.rawValue)
             
             if let letImage = image {
@@ -68,7 +68,7 @@ class RedditTableViewCell: UITableViewCell {
         let blackFont = [ NSForegroundColorAttributeName: UIColor.black ]
         let blueFont = [ NSForegroundColorAttributeName: UIColor.blue ]
         
-        let firstStr: NSMutableAttributedString = NSMutableAttributedString(string:"enviado el \(Date().getFriedlyTimeFrom(utc: (reddit?.createdUtc)!))) por ", attributes: blackFont)
+        let firstStr: NSMutableAttributedString = NSMutableAttributedString(string:"enviado el \(Date().getFriedlyTime(fromUtc:Float((reddit?.createdUtc)!))) por ", attributes: blackFont)
         
         let secondStr: NSMutableAttributedString = NSMutableAttributedString(string: "\(reddit?.author) ", attributes: blueFont)
         

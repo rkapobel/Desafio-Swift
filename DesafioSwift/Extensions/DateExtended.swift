@@ -9,7 +9,7 @@
 import UIKit
 
 extension Date {
-    func getDateStringFrom(utc: Float) -> String! {
+    func getDateString(fromUtc utc: Float) -> String! {
         let date = Date(timeIntervalSince1970: TimeInterval(utc))
         let dateFormatter = DateFormatter()
         // Returns date formatted as 12 hour time.
@@ -17,7 +17,7 @@ extension Date {
         return dateFormatter.string(from: date as Date)
     }
     
-    func getFriedlyTimeFrom(utc: Float) -> String {
+    func getFriedlyTime(fromUtc utc: Float) -> String {
         
         let dateUtc: Date = Date(timeIntervalSince1970: TimeInterval(utc))
         

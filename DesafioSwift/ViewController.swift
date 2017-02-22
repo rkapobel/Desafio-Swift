@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tblReddits: UITableView!
     
-    var reddits: Array<Reddit> = []
+    var reddits: [NSManagedObject] = [NSManagedObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tblReddits.estimatedRowHeight = 120
         tblReddits.rowHeight = UITableViewAutomaticDimension
         
-        ServiceDataManager().updateReddits { (redditsIn: Array<Reddit>?) in
+        ServiceDataManager().updateReddits { (redditsIn: [NSManagedObject]?) in
             if let letRedditsIn = redditsIn {
                 self.reddits += letRedditsIn
                 DispatchQueue.main.async {
@@ -43,7 +44,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // MARK: no puede ser nil asi que...
         
         let cell: RedditTableViewCell = tableView.dequeueReusableCell(withIdentifier: String(describing: RedditTableViewCell.self), for: indexPath) as! RedditTableViewCell
-
+ 
+        let reddit: Reddit = reddits[indexPath.row] as! Reddit
+      
+        NSLog("%@", reddit)
+        
+        //cell.updateCell(withReddit: reddit)
+        
         return cell
     }
 }
