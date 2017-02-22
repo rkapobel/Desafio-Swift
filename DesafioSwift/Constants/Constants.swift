@@ -10,12 +10,8 @@ import UIKit
 
 class Constants: NSObject {
     
-    enum Folders: String {
-        case FilesFolder = "FilesFolder"
-    }
-    
-    enum Services: String {
-        case RedditService = "https://www.reddit.com/top/.json"
-    }
+    static let RedditService: String = "https://www.reddit.com/top/.json"
+    static let redditsCount: Int = 25
 
+    static let FilesFolder: String = "FilesFolder"
 }

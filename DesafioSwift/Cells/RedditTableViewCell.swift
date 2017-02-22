@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import CoreData
 
 class RedditTableViewCell: UITableViewCell {
     
@@ -32,16 +33,25 @@ class RedditTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func updateCell(withReddit reddit: Reddit!) {
-        // MARK: do the thumbnailSource download with alamofire sdk
+    func updateCell(withReddit reddit: NSManagedObject) {
+        let redditManaged: RedditManaged = RedditManaged(withManagedObject: reddit)
         
-        if reddit?.thumbnailSource != nil && (reddit?.thumbnailSource?.characters.count)! > 0 {
-            let image: UIImage? = FileManager().getImage(withName: (reddit?.id)!, inFolder: Constants.Folders.FilesFolder.rawValue)
+        var thumbnailSourceValue: String = redditManaged.getThumbnailSource()
+        thumbnailSourceValue = redditManaged.getThumbnailSource()
+        let idValue: String = redditManaged.getId()
+        let authorValue: String = redditManaged.getAuthor()
+        let titleValue: String = redditManaged.getTitle()
+        let createdUtcValue: Double = redditManaged.getCreatedUtc()
+        let subredditNamePrefixedValue: String = redditManaged.getSubrreditNamePrefixed()
+        let numCommentsValue: UInt32 = redditManaged.getNumComments()
+        
+        if thumbnailSourceValue.characters.count > 0 {
+            let image: UIImage? = FileManager().getImage(withName: idValue, inFolder: Constants.FilesFolder)
             
             if let letImage = image {
                 imgViewThumbnail?.image = letImage
             }else {
-                Alamofire.request((reddit?.thumbnailSource)!).responseJSON { response in
+                Alamofire.request(thumbnailSourceValue).responseJSON { response in
 //                    print(response.request)  // original URL request
 //                    print(response.response) // HTTP URL response
 //                    print(response.result)   // result of response serialization
@@ -56,23 +66,26 @@ class RedditTableViewCell: UITableViewCell {
                     
                     let image: UIImage? = UIImage(data: data!)
                     
-                    self.imgViewThumbnail?.image = image!
-                    
-                    FileManager().saveFile(data: data!, withFileName: (reddit?.id)!, inFolder: Constants.Folders.FilesFolder.rawValue)
+                    if let letImage2 = image {
+                        self.imgViewThumbnail?.image = letImage2
+                        FileManager().saveFile(data: data!, withFileName: idValue, inFolder: Constants.FilesFolder)
+                    }else {
+                        self.imgViewThumbnail?.image = UIImage(imageLiteralResourceName: "no-image")
+                    }
                 }
             }
         }
 
-        lblTitle?.text = reddit?.title
+        lblTitle?.text = titleValue
         
         let blackFont = [ NSForegroundColorAttributeName: UIColor.black ]
         let blueFont = [ NSForegroundColorAttributeName: UIColor.blue ]
         
-        let firstStr: NSMutableAttributedString = NSMutableAttributedString(string:"enviado el \(Date().getFriedlyTime(fromUtc:Float((reddit?.createdUtc)!))) por ", attributes: blackFont)
+        let firstStr: NSMutableAttributedString = NSMutableAttributedString(string:"enviado el \(Date().getFriedlyTime(fromUtc:Float(createdUtcValue))) por ", attributes: blackFont)
         
-        let secondStr: NSMutableAttributedString = NSMutableAttributedString(string: "\(reddit?.author) ", attributes: blueFont)
+        let secondStr: NSMutableAttributedString = NSMutableAttributedString(string: "\(authorValue) ", attributes: blueFont)
         
-        let threeStr: NSMutableAttributedString = NSMutableAttributedString(string: "\(reddit?.subredditNamePrefixed))", attributes: blueFont)
+        let threeStr: NSMutableAttributedString = NSMutableAttributedString(string: "\(subredditNamePrefixedValue))", attributes: blueFont)
         
         secondStr.append(NSAttributedString(string: "a "))
         secondStr.append(threeStr)
@@ -80,6 +93,6 @@ class RedditTableViewCell: UITableViewCell {
         
         lblInfo?.attributedText = firstStr
         
-        lblCommentsCount?.text = "\(reddit?.numComments) comentarios"
+        lblCommentsCount?.text = "\(numCommentsValue) comentarios"
     }
 }

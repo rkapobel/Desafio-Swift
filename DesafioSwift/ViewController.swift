@@ -17,13 +17,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        tblReddits.estimatedRowHeight = 120
+        tblReddits.estimatedRowHeight = 80
         tblReddits.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // MARK: Elijo actualizar siempre que la vista aparece. Los reddits cambian eventualmente.
         
         ServiceDataManager().updateReddits { (redditsIn: [NSManagedObject]?) in
             if let letRedditsIn = redditsIn {
-                self.reddits += letRedditsIn
+                self.reddits = letRedditsIn
                 DispatchQueue.main.async {
                     self.tblReddits.reloadData()
                 }
@@ -33,7 +38,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,15 +45,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // MARK: no puede ser nil asi que...
+        // MARK: cell no puede ser nil si el storyboard esta bien configurado
         
         let cell: RedditTableViewCell = tableView.dequeueReusableCell(withIdentifier: String(describing: RedditTableViewCell.self), for: indexPath) as! RedditTableViewCell
  
-        let reddit: Reddit = reddits[indexPath.row] as! Reddit
-      
-        NSLog("%@", reddit)
-        
-        //cell.updateCell(withReddit: reddit)
+        let reddit: NSManagedObject = reddits[indexPath.row] as! Reddit
+    
+        cell.updateCell(withReddit: reddit)
         
         return cell
     }

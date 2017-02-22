@@ -9,16 +9,19 @@
 import UIKit
 
 extension String {
-    func countInstances(of stringToFind: String) -> Int {
+    func countInstances(of stringsToFind: String ...) -> Int {
         var stringToSearch = self
         var count = 0
-        repeat {
-            guard let foundRange = stringToSearch.range(of: stringToFind, options: .diacriticInsensitive)
-                else { break }
-            stringToSearch = stringToSearch.replacingCharacters(in: foundRange, with: "")
-            count += 1
-            
-        } while (true)
+        
+        for string in stringsToFind {
+            repeat {
+                guard let foundRange = stringToSearch.range(of: string, options: .diacriticInsensitive)
+                    else { break }
+                stringToSearch = stringToSearch.replacingCharacters(in: foundRange, with: "")
+                count += 1
+                
+            } while (true)
+        }
         
         return count
     }

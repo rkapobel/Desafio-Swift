@@ -32,27 +32,27 @@ extension FileManager {
         
         var isDir: ObjCBool = ObjCBool(booleanLiteral: false)
         
-        if FileManager.default.fileExists(atPath: filesPath, isDirectory:&isDir) && isDir.boolValue == true {
+        if FileManager.default.fileExists(atPath: filesPath, isDirectory:&isDir) == false {
             do {
                 try FileManager.default.createDirectory(atPath: filesPath, withIntermediateDirectories: false, attributes: nil)
-                
-                let filePath: String = filesPath + "/\(fileName)"
-                
-                let url: URL? = URL(fileURLWithPath: filePath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlPathAllowed)!)
-                
-                if let letUrl = url {
-                    do {
-                        try fileData.write(to: letUrl, options: NSData.WritingOptions.atomic)
-                    } catch let error as NSError {
-                        print("Error moving file: \(error.localizedDescription)")
-                    }
-                }else {
-                    print("The specified directory does not exist")
-                }
-                
             } catch let error as NSError {
                 print("Error creating directory: \(error.localizedDescription)")
+                return
             }
+        }
+        
+        let filePath: String = filesPath + "/\(fileName)"
+        
+        let url: URL? = URL(fileURLWithPath: filePath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlPathAllowed)!)
+        
+        if let letUrl = url {
+            do {
+                try fileData.write(to: letUrl, options: NSData.WritingOptions.atomic)
+            } catch let error as NSError {
+                print("Error moving file: \(error.localizedDescription)")
+            }
+        }else {
+            print("The specified directory does not exist")
         }
     }
     
@@ -77,7 +77,7 @@ extension FileManager {
         
         var isDir: ObjCBool = ObjCBool(booleanLiteral: false)
         
-        if FileManager.default.fileExists(atPath: filePath, isDirectory:&isDir) && isDir.boolValue == true {
+        if FileManager.default.fileExists(atPath: filePath, isDirectory:&isDir) == true {
             do {
                 try FileManager.default.removeItem(atPath: filePath)
             } catch let error as NSError {
@@ -113,8 +113,6 @@ extension FileManager {
         let data: Data? = getData(withName: fileName, inFolder: folderName)
         
         if let letData = data {
-            
-            // MARK: image no deberia ser nil si data no es nil
             
             let image: UIImage? = UIImage(data: letData)
             

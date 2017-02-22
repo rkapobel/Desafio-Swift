@@ -11,7 +11,7 @@ import UIKit
 extension Dictionary {
     func convertToDictionary(fromData data: Data) -> [Key: Value]? {
         do {
-            return try JSONSerialization.jsonObject(with: data, options: []) as? [Key: Value]
+            return try JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [Key: Value]
         } catch {
             print("error creating dictionary from JSON Value \(error.localizedDescription)")
         }
