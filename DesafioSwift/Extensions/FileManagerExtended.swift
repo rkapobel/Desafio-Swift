@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FileManagerExtended: FileManager {
+extension FileManager {
     
     func firstPath() -> String {
         

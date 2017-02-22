@@ -106,7 +106,7 @@
                   moduleName = "DesafioSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/theappmaster/Documents/Proyectos/DesafioSwift/DesafioSwift/ViewController.swift"
-                  timestampString = "509424447.536603"
+                  timestampString = "509431740.388286"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -121,7 +121,7 @@
                   moduleName = "DesafioSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/theappmaster/Documents/Proyectos/DesafioSwift/DesafioSwift/ViewController.swift"
-                  timestampString = "509424447.547295"
+                  timestampString = "509431740.3958"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -154,7 +154,7 @@
                   moduleName = "DesafioSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/theappmaster/Documents/Proyectos/DesafioSwift/DesafioSwift/Services/ServiceDataManager.swift"
-                  timestampString = "509424473.474797"
+                  timestampString = "509431740.411693"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
@@ -169,7 +169,7 @@
                   moduleName = "DesafioSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/theappmaster/Documents/Proyectos/DesafioSwift/DesafioSwift/Services/ServiceDataManager.swift"
-                  timestampString = "509424473.485596"
+                  timestampString = "509431740.418344"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
@@ -177,6 +177,38 @@
                   offsetFromSymbolStart = "23">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesafioSwift/Services/ServiceDataManager.swift"
+            timestampString = "509431273.272423"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "updateReddits(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesafioSwift/Extensions/DictionaryExtended.swift"
+            timestampString = "509431553.937663"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "convertToDictionary(text:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

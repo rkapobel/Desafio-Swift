@@ -24,6 +24,7 @@
 		23EE42D61E5CDC6400AF3379 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23EE42D51E5CDC6400AF3379 /* Alamofire.framework */; };
 		23EE42D81E5CE3BA00AF3379 /* FileManagerExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE42D71E5CE3BA00AF3379 /* FileManagerExtended.swift */; };
 		93F46A957D5D24014B5FEE40 /* Pods_DesafioSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC360211E94767A43B77CB54 /* Pods_DesafioSwift.framework */; };
+		E63F2E961E5D4B5D001DA8D5 /* DictionaryExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F2E951E5D4B5D001DA8D5 /* DictionaryExtended.swift */; };
 		E698CF301E5D10FE00459A06 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698CF2F1E5D10FE00459A06 /* Constants.swift */; };
 		E698CF331E5D166F00459A06 /* ServiceDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698CF321E5D166F00459A06 /* ServiceDataManager.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		5981C2F570C1B50102D13C2B /* Pods-DesafioSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesafioSwift/Pods-DesafioSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		AC360211E94767A43B77CB54 /* Pods_DesafioSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81B51ED4E5CC6EB5E2D2433 /* Pods-DesafioSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DesafioSwift/Pods-DesafioSwift.release.xcconfig"; sourceTree = "<group>"; };
+		E63F2E951E5D4B5D001DA8D5 /* DictionaryExtended.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtended.swift; sourceTree = "<group>"; };
 		E698CF2F1E5D10FE00459A06 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E698CF321E5D166F00459A06 /* ServiceDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +212,7 @@
 			children = (
 				234500D81E5CCF9500954BC8 /* DateExtended.swift */,
 				23EE42D71E5CE3BA00AF3379 /* FileManagerExtended.swift */,
+				E63F2E951E5D4B5D001DA8D5 /* DictionaryExtended.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				2345009F1E5CBF2700954BC8 /* DesafioSwift.xcdatamodeld in Sources */,
 				234500991E5CBF2700954BC8 /* ViewController.swift in Sources */,
 				E698CF331E5D166F00459A06 /* ServiceDataManager.swift in Sources */,
+				E63F2E961E5D4B5D001DA8D5 /* DictionaryExtended.swift in Sources */,
 				234500971E5CBF2700954BC8 /* AppDelegate.swift in Sources */,
 				23EE42D81E5CE3BA00AF3379 /* FileManagerExtended.swift in Sources */,
 				234500D91E5CCF9500954BC8 /* DateExtended.swift in Sources */,

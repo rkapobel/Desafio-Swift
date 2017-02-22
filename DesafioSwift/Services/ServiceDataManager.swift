@@ -20,7 +20,11 @@ class ServiceDataManager: NSObject {
 //                print(response.data)     // server data
 //
             if let JSON = response.result.value {
-                print("JSON: \(JSON)")
+                //print("JSON: \(JSON)")
+                
+                let dict: Dictionary<String, Any>? = Dictionary<String, Any>().convertToDictionary(text: String(describing: JSON))
+                
+                print("Dictionary \(dict)")
             }
             
             // MARK: change to var to mutate

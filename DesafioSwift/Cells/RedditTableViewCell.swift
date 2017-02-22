@@ -36,7 +36,7 @@ class RedditTableViewCell: UITableViewCell {
         // MARK: do the thumbnailSource download with alamofire sdk
         
         if reddit?.thumbnailSource != nil && (reddit?.thumbnailSource.characters.count)! > 0 {
-            let image: UIImage? = FileManagerExtended().getImage(withName: (reddit?.id)!, inFolder: Constants.Folders.FilesFolder.rawValue)
+            let image: UIImage? = FileManager().getImage(withName: (reddit?.id)!, inFolder: Constants.Folders.FilesFolder.rawValue)
             
             if let letImage = image {
                 imgViewThumbnail?.image = letImage
@@ -58,7 +58,7 @@ class RedditTableViewCell: UITableViewCell {
                     
                     self.imgViewThumbnail?.image = image!
                     
-                    FileManagerExtended().saveFile(data: data!, withFileName: (reddit?.id)!, inFolder: Constants.Folders.FilesFolder.rawValue)
+                    FileManager().saveFile(data: data!, withFileName: (reddit?.id)!, inFolder: Constants.Folders.FilesFolder.rawValue)
                 }
             }
         }
