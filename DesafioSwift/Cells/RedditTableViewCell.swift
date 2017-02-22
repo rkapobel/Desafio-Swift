@@ -47,6 +47,7 @@ class RedditTableViewCell: UITableViewCell {
 //                    print(response.result)   // result of response serialization
 //                    print(response.data)     // server data
 //                    
+                    
 //                    if let JSON = response.result.value {
 //                        print("JSON: \(JSON)")
 //                    }
