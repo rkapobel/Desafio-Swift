@@ -24,20 +24,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reddit-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ypw-E9-vyz">
-                                <rect key="frame" x="20" y="20" width="984" height="47"/>
+                                <rect key="frame" x="20" y="20" width="984" height="88"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Ypw-E9-vyz" secondAttribute="height" multiplier="984:47" id="hQf-tS-p2M"/>
+                                    <constraint firstAttribute="height" constant="88" id="rRl-ur-inX"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jhf-FR-kqe">
-                                <rect key="frame" x="20" y="75" width="984" height="673"/>
+                                <rect key="frame" x="20" y="116" width="984" height="632"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RedditTableViewCell" rowHeight="117" id="PGQ-0y-qJq" customClass="RedditTableViewCell" customModule="DesafioSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="984" height="117"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PGQ-0y-qJq" id="I24-3e-RY4">
-                                            <rect key="frame" x="0.0" y="0.0" width="984" height="116"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="984" height="117"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reddit-puppet.png" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-3D-S2n">
@@ -89,13 +89,16 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="fuU-aB-5if"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Pt0-Ap-vqQ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Ypw-E9-vyz" secondAttribute="trailing" constant="20" id="L2B-XM-15u"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jhf-FR-kqe" secondAttribute="bottom" constant="20" id="MFr-Ty-lsp"/>
-                            <constraint firstItem="Ypw-E9-vyz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="41:32" id="XtK-qk-3Xg"/>
                             <constraint firstItem="jhf-FR-kqe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="g3K-kG-vd0"/>
                             <constraint firstAttribute="trailing" secondItem="jhf-FR-kqe" secondAttribute="trailing" constant="20" id="gIQ-MR-NOM"/>
                             <constraint firstItem="Ypw-E9-vyz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="hvy-T5-tf5"/>
@@ -105,6 +108,9 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="768"/>
+                    <connections>
+                        <outlet property="tblReddits" destination="jhf-FR-kqe" id="XiL-Qd-omi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

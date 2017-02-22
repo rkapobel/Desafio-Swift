@@ -35,41 +35,49 @@ class RedditTableViewCell: UITableViewCell {
     func updateCellWithReddit(_ reddit: Reddit!) {
         // MARK: do the thumbnailSource download with alamofire sdk
         
-        Alamofire.request((reddit?.thumbnailSource)!).responseJSON { response in
-//            print(response.request)  // original URL request
-//            print(response.response) // HTTP URL response
-//            print(response.result)   // result of response serialization
-//            print(response.data)     // server data
+        if reddit?.thumbnailSource != nil && (reddit?.thumbnailSource.characters.count)! > 0 {
+            let image: UIImage? = FileManagerExtended().getImage(withName: (reddit?.id)!, inFolder: Constants.Folders.FilesFolder.rawValue)
             
-//            if let JSON = response.result.value {
-//                print("JSON: \(JSON)")
-//            }
-            
-            let data: Data? = response.data
-            
-            let image: UIImage? = UIImage(data: data!)
-            
-            NSLog("%@", image!)
+            if let letImage = image {
+                imgViewThumbnail?.image = letImage
+            }else {
+                Alamofire.request((reddit?.thumbnailSource)!).responseJSON { response in
+//                    print(response.request)  // original URL request
+//                    print(response.response) // HTTP URL response
+//                    print(response.result)   // result of response serialization
+//                    print(response.data)     // server data
+//                    
+//                    if let JSON = response.result.value {
+//                        print("JSON: \(JSON)")
+//                    }
+                    
+                    let data: Data? = response.data
+                    
+                    let image: UIImage? = UIImage(data: data!)
+                    
+                    self.imgViewThumbnail?.image = image!
+                    
+                    FileManagerExtended().saveFile(data: data!, withFileName: (reddit?.id)!, inFolder: Constants.Folders.FilesFolder.rawValue)
+                }
+            }
         }
-        
-        imgViewThumbnail?.image = nil
-        
+
         lblTitle?.text = reddit?.title
         
         let blackFont = [ NSForegroundColorAttributeName: UIColor.black ]
         let blueFont = [ NSForegroundColorAttributeName: UIColor.blue ]
         
-        let first: NSMutableAttributedString = NSMutableAttributedString(string:"enviado el \(NSDate().getDateStringFrom(utc: (reddit?.createdUtc)!))) por ", attributes: blackFont)
+        let firstStr: NSMutableAttributedString = NSMutableAttributedString(string:"enviado el \(Date().getFriedlyTimeFrom(utc: (reddit?.createdUtc)!))) por ", attributes: blackFont)
         
-        let second: NSMutableAttributedString = NSMutableAttributedString(string: "\(reddit?.author) ", attributes: blueFont)
+        let secondStr: NSMutableAttributedString = NSMutableAttributedString(string: "\(reddit?.author) ", attributes: blueFont)
         
-        let three: NSMutableAttributedString = NSMutableAttributedString(string: "\(reddit?.subredditNamePrefixed))", attributes: blueFont)
+        let threeStr: NSMutableAttributedString = NSMutableAttributedString(string: "\(reddit?.subredditNamePrefixed))", attributes: blueFont)
         
-        second.append(NSAttributedString(string: "a "))
-        second.append(three)
-        first.append(second)
+        secondStr.append(NSAttributedString(string: "a "))
+        secondStr.append(threeStr)
+        firstStr.append(secondStr)
         
-        lblInfo?.attributedText = first
+        lblInfo?.attributedText = firstStr
         
         lblCommentsCount?.text = "\(reddit?.numComments) comentarios"
     }

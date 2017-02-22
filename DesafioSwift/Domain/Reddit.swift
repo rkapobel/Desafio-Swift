@@ -15,7 +15,7 @@ class Reddit: NSObject {
     var createdUtc: Float!
     var numComments: NSInteger!
     var subredditNamePrefixed: String!
-    var thumbnailSource: String?
+    var thumbnailSource: String!
     
     override init() {
         super.init()

@@ -26,7 +26,7 @@ class FileManagerExtended: FileManager {
         return firstPathStr
     }
     
-    func saveFile(data fileData: NSData, withFileName fileName: String, inFolder folderName: String) {
+    func saveFile(data fileData: Data, withFileName fileName: String, inFolder folderName: String) {
     
         let filesPath: String = getPath(folderName)
         
@@ -34,15 +34,22 @@ class FileManagerExtended: FileManager {
         
         if FileManager.default.fileExists(atPath: filesPath, isDirectory:&isDir) && isDir.boolValue == true {
             do {
-                try  FileManager.default.createDirectory(atPath: filesPath, withIntermediateDirectories: false, attributes: nil)
+                try FileManager.default.createDirectory(atPath: filesPath, withIntermediateDirectories: false, attributes: nil)
                 
                 let filePath: String = filesPath + "/\(fileName)"
                 
-                do {
-                    try fileData.write(toFile: filePath, options: NSData.WritingOptions.atomic)
-                } catch let error as NSError {
-                    print("Error moving file: \(error.localizedDescription)")
+                let url: URL? = URL(fileURLWithPath: filePath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlPathAllowed)!)
+                
+                if let letUrl = url {
+                    do {
+                        try fileData.write(to: letUrl, options: NSData.WritingOptions.atomic)
+                    } catch let error as NSError {
+                        print("Error moving file: \(error.localizedDescription)")
+                    }
+                }else {
+                    print("The specified directory does not exist")
                 }
+                
             } catch let error as NSError {
                 print("Error creating directory: \(error.localizedDescription)")
             }
@@ -68,7 +75,7 @@ class FileManagerExtended: FileManager {
         
         let filePath: String = getPath(folderName, fileName)
         
-         var isDir: ObjCBool = ObjCBool(booleanLiteral: false)
+        var isDir: ObjCBool = ObjCBool(booleanLiteral: false)
         
         if FileManager.default.fileExists(atPath: filePath, isDirectory:&isDir) && isDir.boolValue == true {
             do {

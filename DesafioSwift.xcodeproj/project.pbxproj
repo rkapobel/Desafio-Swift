@@ -18,12 +18,14 @@
 		234500CC1E5CC0C300954BC8 /* reddit-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 234500C91E5CC0C300954BC8 /* reddit-icon.png */; };
 		234500CD1E5CC0C300954BC8 /* reddit-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 234500CA1E5CC0C300954BC8 /* reddit-logo.png */; };
 		234500CE1E5CC0C300954BC8 /* reddit-puppet.png in Resources */ = {isa = PBXBuildFile; fileRef = 234500CB1E5CC0C300954BC8 /* reddit-puppet.png */; };
-		234500D91E5CCF9500954BC8 /* NSDateExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234500D81E5CCF9500954BC8 /* NSDateExtended.swift */; };
+		234500D91E5CCF9500954BC8 /* DateExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234500D81E5CCF9500954BC8 /* DateExtended.swift */; };
 		234500DB1E5CCF9A00954BC8 /* Reddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234500DA1E5CCF9A00954BC8 /* Reddit.swift */; };
 		234500DD1E5CCFA200954BC8 /* RedditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234500DC1E5CCFA200954BC8 /* RedditTableViewCell.swift */; };
 		23EE42D61E5CDC6400AF3379 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23EE42D51E5CDC6400AF3379 /* Alamofire.framework */; };
 		23EE42D81E5CE3BA00AF3379 /* FileManagerExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE42D71E5CE3BA00AF3379 /* FileManagerExtended.swift */; };
 		93F46A957D5D24014B5FEE40 /* Pods_DesafioSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC360211E94767A43B77CB54 /* Pods_DesafioSwift.framework */; };
+		E698CF301E5D10FE00459A06 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698CF2F1E5D10FE00459A06 /* Constants.swift */; };
+		E698CF331E5D166F00459A06 /* ServiceDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698CF321E5D166F00459A06 /* ServiceDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +63,7 @@
 		234500C91E5CC0C300954BC8 /* reddit-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reddit-icon.png"; sourceTree = "<group>"; };
 		234500CA1E5CC0C300954BC8 /* reddit-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reddit-logo.png"; sourceTree = "<group>"; };
 		234500CB1E5CC0C300954BC8 /* reddit-puppet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reddit-puppet.png"; sourceTree = "<group>"; };
-		234500D81E5CCF9500954BC8 /* NSDateExtended.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtended.swift; sourceTree = "<group>"; };
+		234500D81E5CCF9500954BC8 /* DateExtended.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtended.swift; sourceTree = "<group>"; };
 		234500DA1E5CCF9A00954BC8 /* Reddit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reddit.swift; path = Domain/Reddit.swift; sourceTree = "<group>"; };
 		234500DC1E5CCFA200954BC8 /* RedditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RedditTableViewCell.swift; path = Cells/RedditTableViewCell.swift; sourceTree = "<group>"; };
 		23EE42D51E5CDC6400AF3379 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
@@ -69,6 +71,8 @@
 		5981C2F570C1B50102D13C2B /* Pods-DesafioSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesafioSwift/Pods-DesafioSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		AC360211E94767A43B77CB54 /* Pods_DesafioSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81B51ED4E5CC6EB5E2D2433 /* Pods-DesafioSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DesafioSwift/Pods-DesafioSwift.release.xcconfig"; sourceTree = "<group>"; };
+		E698CF2F1E5D10FE00459A06 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E698CF321E5D166F00459A06 /* ServiceDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 		234500951E5CBF2700954BC8 /* DesafioSwift */ = {
 			isa = PBXGroup;
 			children = (
+				E698CF311E5D163B00459A06 /* Services */,
+				E698CF2B1E5D107F00459A06 /* Constants */,
 				234500D71E5CCF9500954BC8 /* Extensions */,
 				234500D21E5CC76600954BC8 /* Domain */,
 				234500CF1E5CC5E800954BC8 /* Cells */,
@@ -202,7 +208,7 @@
 		234500D71E5CCF9500954BC8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				234500D81E5CCF9500954BC8 /* NSDateExtended.swift */,
+				234500D81E5CCF9500954BC8 /* DateExtended.swift */,
 				23EE42D71E5CE3BA00AF3379 /* FileManagerExtended.swift */,
 			);
 			path = Extensions;
@@ -215,6 +221,22 @@
 				AC360211E94767A43B77CB54 /* Pods_DesafioSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E698CF2B1E5D107F00459A06 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E698CF2F1E5D10FE00459A06 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		E698CF311E5D163B00459A06 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E698CF321E5D166F00459A06 /* ServiceDataManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +311,7 @@
 					234500921E5CBF2700954BC8 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5Y65PQ475R;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					234500A91E5CBF2800954BC8 = {
@@ -409,10 +432,12 @@
 				234500DB1E5CCF9A00954BC8 /* Reddit.swift in Sources */,
 				2345009F1E5CBF2700954BC8 /* DesafioSwift.xcdatamodeld in Sources */,
 				234500991E5CBF2700954BC8 /* ViewController.swift in Sources */,
+				E698CF331E5D166F00459A06 /* ServiceDataManager.swift in Sources */,
 				234500971E5CBF2700954BC8 /* AppDelegate.swift in Sources */,
 				23EE42D81E5CE3BA00AF3379 /* FileManagerExtended.swift in Sources */,
-				234500D91E5CCF9500954BC8 /* NSDateExtended.swift in Sources */,
+				234500D91E5CCF9500954BC8 /* DateExtended.swift in Sources */,
 				234500DD1E5CCFA200954BC8 /* RedditTableViewCell.swift in Sources */,
+				E698CF301E5D10FE00459A06 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +590,7 @@
 			baseConfigurationReference = 5981C2F570C1B50102D13C2B /* Pods-DesafioSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5Y65PQ475R;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -575,6 +601,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rokdev.DesafioSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -584,6 +611,7 @@
 			baseConfigurationReference = B81B51ED4E5CC6EB5E2D2433 /* Pods-DesafioSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5Y65PQ475R;
 				FRAMEWORK_SEARCH_PATHS = (
