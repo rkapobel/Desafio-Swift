@@ -6,6 +6,8 @@
 //  Copyright © 2017 Rodrigo Kapobel. All rights reserved.
 //
 
+// MARK: Esta implementacion de CoreData no tiene relationships, fetch properties, trabajos de concurrencia y casi ninguna otra funcionalidad especial de CoreData. Solo el campo id en Reddit esta indexado.
+
 import UIKit
 import CoreData
 

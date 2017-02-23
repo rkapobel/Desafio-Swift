@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: Esta extensión cuenta con un método countInstances que cuenta apariciones de un valor en el String y devuelve la cantidad de las mismas.
+
 extension String {
     func countInstances(of stringsToFind: String ...) -> Int {
         var stringToSearch = self

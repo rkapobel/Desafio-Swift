@@ -8,7 +8,13 @@
 
 import UIKit
 
+// MARK: Dado un argumento Data crea un diccionario [Key: Value] utilizando JSON serealization
+
 extension Dictionary {
+    
+    /**
+     Dado un argumento Data crea un diccionario [Key: Value] utilizando JSON serealization
+     */
     func convertToDictionary(fromData data: Data) -> [Key: Value]? {
         do {
             return try JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [Key: Value]

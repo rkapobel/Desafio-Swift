@@ -33,10 +33,10 @@ class RedditTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    /**
+     Ingrando una entidad Reddit, la función se encarga de actualizar los datos de la misma.
+    */
     func updateCell(withReddit reddit: Reddit) {
-        
-        // MARK: si, por ahora estoy asumiendo que no son nil...pero podrian? esto lo veremos en el proximo episodio
-        // lo correcto seria hacer unwraping
         
         var thumbnailSourceValue: String = reddit.thumbnailSource!
         let idValue: String = reddit.id!
@@ -53,16 +53,6 @@ class RedditTableViewCell: UITableViewCell {
                 imgViewThumbnail?.image = letImage
             }else {
                 Alamofire.request(thumbnailSourceValue).responseJSON { response in
-//                    print(response.request)  // original URL request
-//                    print(response.response) // HTTP URL response
-//                    print(response.result)   // result of response serialization
-//                    print(response.data)     // server data
-//                    
-                    
-//                    if let JSON = response.result.value {
-//                        print("JSON: \(JSON)")
-//                    }
-                    
                     let data: Data? = response.data
                     
                     let image: UIImage? = UIImage(data: data!)
@@ -82,7 +72,7 @@ class RedditTableViewCell: UITableViewCell {
         let blackFont = [ NSForegroundColorAttributeName: UIColor.black ]
         let blueFont = [ NSForegroundColorAttributeName: UIColor.blue ]
         
-        let firstStr: NSMutableAttributedString = NSMutableAttributedString(string:"Enviado \(Date().getFriedlyTime(fromUtc:Float(createdUtcValue))) por ", attributes: blackFont)
+        let firstStr: NSMutableAttributedString = NSMutableAttributedString(string:"Enviado \(Date().getFriedlyTime(fromUtc:createdUtcValue)) por ", attributes: blackFont)
         
         let secondStr: NSMutableAttributedString = NSMutableAttributedString(string: "\(authorValue) ", attributes: blueFont)
         

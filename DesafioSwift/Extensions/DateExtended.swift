@@ -9,15 +9,28 @@
 import UIKit
 
 extension Date {
-    func getDateString(fromUtc utc: Float) -> String! {
+    /**
+     Devuelve una fecha con formato dd/MM/YYYY - HH:mm en zona horaria UTC para el valor utc ingresado
+    */
+    func getDateString(fromUtc utc: Double) -> String! {
         let date = Date(timeIntervalSince1970: TimeInterval(utc))
         let dateFormatter = DateFormatter()
-        // Returns date formatted as 12 hour time.
+        let timeZone: TimeZone = TimeZone(abbreviation: "UTC")!
+        dateFormatter.timeZone = timeZone
         dateFormatter.dateFormat = "dd/MM/YYYY - HH:mm"
         return dateFormatter.string(from: date as Date)
     }
     
-    func getFriedlyTime(fromUtc utc: Float) -> String {
+    /**
+     Dado un valor UTC calcula la información de la fecha en formato amigable: 
+     
+     hace tantas horas
+     
+     hace tantos días
+     
+     hace tantos años
+    */
+    func getFriedlyTime(fromUtc utc: Double) -> String {
         
         let dateUtc: Date = Date(timeIntervalSince1970: TimeInterval(utc))
         

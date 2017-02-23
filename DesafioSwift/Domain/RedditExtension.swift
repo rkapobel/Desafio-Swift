@@ -11,6 +11,11 @@ import CoreData
 
 extension Reddit {
 
+    /**
+     Ingresando un diccionario por parámetro, se actualizan los valores de la entidad.
+     
+     Es responsabilidad del usuario pasar un diccionario con los atributos correctos.
+    */
     func update(withDict dict: [String: Any]) {
         
         self.id = dict["id"] as? String
@@ -20,6 +25,7 @@ extension Reddit {
         self.thumbnailSource = dict["thumbnail"] as? String
         self.createdUtc = dict["created_utc"] as! Double
         self.numComments = dict["num_comments"] as! Int32
+        self.score = dict["score"] as! Int32
         
         RedditDAO().save()
     }

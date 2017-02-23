@@ -17,6 +17,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // MARK: Esto permite que las alturas sean dinámicas.
+        
         tblReddits.estimatedRowHeight = 80
         tblReddits.rowHeight = UITableViewAutomaticDimension
     }
@@ -46,6 +49,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // MARK: cell no puede ser nil si el storyboard esta bien configurado
+        
+        // MARK: Como siempre, esta implementación hace uso del reciclado de celdas.
         
         let cell: RedditTableViewCell = tableView.dequeueReusableCell(withIdentifier: String(describing: RedditTableViewCell.self), for: indexPath) as! RedditTableViewCell
  

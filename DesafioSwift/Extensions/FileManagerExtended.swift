@@ -8,8 +8,12 @@
 
 import UIKit
 
+
+// MARK: Esta extensión de FileManager se encarga de guardar y borrar archivos de un directorio especificado por parámetro.
+// Si el directorio especificado no existe al intentar guardar, FileManager se encarga de crearlo.
+
 extension FileManager {
-    
+
     func firstPath() -> String {
         
         // MARK: No puede dar nil o vacio

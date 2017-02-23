@@ -10,13 +10,16 @@ import UIKit
 import Alamofire
 import CoreData
 
+// MARK: Este servicio es paginado pero por requerimiento solo muestro los primeros 25 reddits.
+
 class ServiceDataManager: NSObject {
 
+    /**
+     Esta funcion llama al servicio de reddits haciendo uso de una entidad Pagination que se envia en la firma a través de pag.
+     
+     La función finishedBlock devuelve un arreglo con Reddits
+    */
     func updateReddits(_ finishedBlock: @escaping ([Reddit]?) -> Void, pag: Pagination) {
-        
-        // MARK: Esta implementacion de CoreData no tiene relationships, fetch properties, trabajos de concurrencia y casi ninguna otra funcionalidad especial de CoreData. Solo el campo id en Reddit esta indexado.
-        
-        // MARK: Este servicio es paginado pero por requerimiento solo muestro los primeros 25 reddits.
     
         var withAfter: String = ""
         
@@ -27,10 +30,20 @@ class ServiceDataManager: NSObject {
         callUpdate(finishedBlock, withUrl: Constants.RedditService.appending("?count=\(Constants.redditsCount)\(withAfter)"))
     }
     
+    /**
+     Esta funcion llama al servicio de reddits sin hacer uso de paginación.
+     
+     La función finishedBlock devuelve un arreglo con Reddits
+     */
     func updateReddits (_ finishedBlock: @escaping ([Reddit]?) -> Void) {
         callUpdate(finishedBlock, withUrl: Constants.RedditService.appending("?count=\(Constants.redditsCount)"))
     }
     
+    /**
+     Esta funcion llama al servicio de reddits con una url que apunta al servicio deseado.
+     
+     La función finishedBlock devuelve un arreglo con Reddits
+     */
     func callUpdate(_ finishedBlock: @escaping ([Reddit]?) -> Void, withUrl url: String) {
         Alamofire.request(url).responseJSON { response in
             
@@ -86,7 +99,7 @@ class ServiceDataManager: NSObject {
                 NSLog("service response error: %@", response.error?.localizedDescription ?? "error without description")
             }
             
-            let arrayOfReddits: [Reddit] = RedditDAO().get(objectsWithPredicate: nil) as! [Reddit]
+            let arrayOfReddits: [Reddit] = RedditDAO().get(objectsWithPredicate: nil, sortBy: "score", ASC: false) as! [Reddit]
             
             finishedBlock(arrayOfReddits)
         }

@@ -14,10 +14,18 @@ enum State: Int {
     case existent
 }
 
+
+/**
+ La entidad Pagination y el manager PaginationDAO estan pensados para controlar el paginado total del servicio.
+ 
+ La idea es que se mantiene una única entrada en la entidad Pagination que es lastId que representa el valor que tiene que ir en el argumento after del servicio de reddits. 
+ 
+ Dado que CoreData está pensado como persitente de objetos gran parte de las consistencias en la entidad tienen que hacerse externamente al framework
+ */
 class PaginationDAO: ParentDAO {
     
     init() {
-        super.init(entity: "Pagination")
+        super.init(entity: String(describing: Pagination.self))
     }
     
     func getThePagination() -> (Pagination, State)  {
@@ -27,7 +35,7 @@ class PaginationDAO: ParentDAO {
             return (managedPaginations[0], State.existent)
         }
         
-        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName:"Pagination", in: managedContext)!
+        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName:String(describing: Pagination.self), in: managedContext)!
         
         let pag: Pagination = Pagination(entity: entity, insertInto: managedContext)
         
