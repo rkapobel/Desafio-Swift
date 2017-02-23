@@ -14,14 +14,14 @@ class ServiceDataManager: NSObject {
 
     func updateReddits(_ finishedBlock: @escaping ([NSManagedObject]?) -> Void) {
         
-        // MARK: este servicio es paginado pero por requerimiento solo muestro los primeros 25 reddits.
+        // MARK: Este servicio es paginado pero por requerimiento solo muestro los primeros 25 reddits.
         
         Alamofire.request(Constants.RedditService.appending("?count=\(Constants.redditsCount)")).responseJSON { response in
 
             if let JSONData = response.data {
 
                 let dict: [String: Any]? = Dictionary().convertToDictionary(fromData: JSONData)
-
+                
                 var allRedditsById: [String: NSManagedObject] = RedditDAO().getAllById()
                 
                 if let letDict = dict {
@@ -62,10 +62,10 @@ class ServiceDataManager: NSObject {
                 
                 // MARK: los reddits restantes deben ser eliminados junto con sus imagenes.
                 
-                for (key, reddit) in allRedditsById {
-                    FileManager().deleteFile(withName: key, fromFolder: Constants.FilesFolder)
-                    RedditDAO().delete(reddit: reddit)
-                }
+//                for (key, reddit) in allRedditsById {
+//                    FileManager().deleteFile(withName: key, fromFolder: Constants.FilesFolder)
+//                    RedditDAO().delete(reddit: reddit)
+//                }
                 
             }else {
                 NSLog("service response error: %@", response.error?.localizedDescription ?? "error without description")
