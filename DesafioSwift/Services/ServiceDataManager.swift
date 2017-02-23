@@ -63,6 +63,10 @@ class ServiceDataManager: NSObject {
                     
                     UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
                     
+                    let arrayOfReddits: [Reddit] = RedditDAO().get(objectsWithPredicate: nil, sortBy: "score", ASC: false) as! [Reddit]
+                    
+                    finishedBlock(arrayOfReddits)
+                    
                     return
                 }
                 
