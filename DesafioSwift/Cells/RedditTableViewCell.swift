@@ -82,7 +82,7 @@ class RedditTableViewCell: UITableViewCell {
         let blackFont = [ NSForegroundColorAttributeName: UIColor.black ]
         let blueFont = [ NSForegroundColorAttributeName: UIColor.blue ]
         
-        let firstStr: NSMutableAttributedString = NSMutableAttributedString(string:"enviado el \(Date().getFriedlyTime(fromUtc:Float(createdUtcValue))) por ", attributes: blackFont)
+        let firstStr: NSMutableAttributedString = NSMutableAttributedString(string:"Enviado \(Date().getFriedlyTime(fromUtc:Float(createdUtcValue))) por ", attributes: blackFont)
         
         let secondStr: NSMutableAttributedString = NSMutableAttributedString(string: "\(authorValue) ", attributes: blueFont)
         

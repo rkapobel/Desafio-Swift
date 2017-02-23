@@ -21,9 +21,9 @@ extension Date {
         
         let dateUtc: Date = Date(timeIntervalSince1970: TimeInterval(utc))
         
-        var timeText: String = "Hace "
+        var timeText: String = "hace "
         
-        let hoursSinceUtc: Double = Date().timeIntervalSince(dateUtc)
+        let hoursSinceUtc: Double = Date().timeIntervalSince(dateUtc)/3600.0
         
         let daysInMonthRng: NSRange = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)!.range(of: NSCalendar.Unit.day, in: NSCalendar.Unit.month, for: Date())
         
@@ -70,11 +70,7 @@ extension Date {
                 timeText =  timeText.appending("\(hoursSinceUtc/(daysInYear*24)) días")
             }
         }else {
-            let formatter: DateFormatter = DateFormatter()
-            
-            formatter.dateFormat = "HH:mm";
-            
-            timeText = formatter.string(from: dateUtc);
+            timeText = timeText.appending("\(Int(hoursSinceUtc)) horas")
         }
 
         return timeText

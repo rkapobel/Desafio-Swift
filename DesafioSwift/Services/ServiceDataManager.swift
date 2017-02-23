@@ -75,12 +75,12 @@ class ServiceDataManager: NSObject {
                     }
                 }
                 
-                // MARK: los reddits restantes deben ser eliminados junto con sus imagenes.
+// MARK: los reddits restantes deben ser eliminados junto con sus imagenes.
                 
-                //                for (key, reddit) in allRedditsById {
-                //                    FileManager().deleteFile(withName: key, fromFolder: Constants.FilesFolder)
-                //                    RedditDAO().delete(reddit: reddit)
-                //                }
+                for (key, reddit) in allRedditsById {
+                    FileManager().deleteFile(withName: key, fromFolder: Constants.FilesFolder)
+                    RedditDAO().delete(object: reddit)
+                }
                 
             }else {
                 NSLog("service response error: %@", response.error?.localizedDescription ?? "error without description")

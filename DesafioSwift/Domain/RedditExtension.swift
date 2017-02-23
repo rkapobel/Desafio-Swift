@@ -23,5 +23,4 @@ extension Reddit {
         
         RedditDAO().save()
     }
-
 }

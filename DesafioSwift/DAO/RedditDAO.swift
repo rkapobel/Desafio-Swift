@@ -40,15 +40,25 @@ class RedditDAO: ParentDAO {
     }
     
     func getAllById() -> [String: Reddit] {
-        let allStoredObjects: [Reddit] = get(objectsWithPredicate: nil) as! [Reddit]
+        let allStoredReddits: [Reddit] = get(objectsWithPredicate: nil) as! [Reddit]
         
         var objectsById: [String: Reddit] = [String: Reddit]()
         
-        for object in allStoredObjects {
+        for object in allStoredReddits {
             objectsById[object.id!] = object
         }
         
         return objectsById
+    }
+    
+    func get(byId id: String) -> Reddit? {
+        let reddits: [Reddit] = get(objectsWithPredicate: "id = %@", values: id) as! [Reddit]
+        
+        if reddits.count > 0 {
+            return reddits[0]
+        }
+        
+        return nil
     }
     
     func exists(objectWithId id: String) -> Bool {
