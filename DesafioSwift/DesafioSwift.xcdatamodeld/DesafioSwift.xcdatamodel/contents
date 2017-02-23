@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Pagination" representedClassName="Pagination" syncable="YES" codeGenerationType="class">
+        <attribute name="lastId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Reddit" representedClassName="Reddit" syncable="YES" codeGenerationType="class">
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createdUtc" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="numComments" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="subredditNamePrefixed" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="thumbnailSource" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Reddit" positionX="-63" positionY="-864" width="128" height="148"/>
+        <element name="Reddit" positionX="-63" positionY="-1003" width="128" height="148"/>
+        <element name="Pagination" positionX="-63" positionY="-810" width="128" height="58"/>
     </elements>
 </model>

@@ -12,17 +12,33 @@ import CoreData
 
 class ServiceDataManager: NSObject {
 
-    func updateReddits(_ finishedBlock: @escaping ([NSManagedObject]?) -> Void) {
+    func updateReddits(_ finishedBlock: @escaping ([Reddit]?) -> Void, pag: Pagination) {
+        
+        // MARK: Esta implementacion de CoreData no tiene relationships, fetch properties, trabajos de concurrencia y casi ninguna otra funcionalidad especial de CoreData. Solo el campo id en Reddit esta indexado.
         
         // MARK: Este servicio es paginado pero por requerimiento solo muestro los primeros 25 reddits.
+    
+        var withAfter: String = ""
         
-        Alamofire.request(Constants.RedditService.appending("?count=\(Constants.redditsCount)")).responseJSON { response in
-
+        if (pag.lastId?.characters.count)! > 0 {
+            withAfter = "&after=t3_\(pag.lastId)"
+        }
+    
+        callUpdate(finishedBlock, withUrl: Constants.RedditService.appending("?count=\(Constants.redditsCount)\(withAfter)"))
+    }
+    
+    func updateReddits (_ finishedBlock: @escaping ([Reddit]?) -> Void) {
+        callUpdate(finishedBlock, withUrl: Constants.RedditService.appending("?count=\(Constants.redditsCount)"))
+    }
+    
+    func callUpdate(_ finishedBlock: @escaping ([Reddit]?) -> Void, withUrl url: String) {
+        Alamofire.request(url).responseJSON { response in
+            
             if let JSONData = response.data {
-
+                
                 let dict: [String: Any]? = Dictionary().convertToDictionary(fromData: JSONData)
                 
-                var allRedditsById: [String: NSManagedObject] = RedditDAO().getAllById()
+                var allRedditsById: [String: Reddit] = RedditDAO().getAllById()
                 
                 if let letDict = dict {
                     
@@ -41,16 +57,15 @@ class ServiceDataManager: NSObject {
                                         let dictOfValues = value as? [String: Any]
                                         
                                         if let letDictOfValues = dictOfValues {
-                            
+                                            
                                             let idStr = letDictOfValues["id"] as! String
                                             
-                                            let managedObject: NSManagedObject? = allRedditsById.removeValue(forKey: idStr)
+                                            let managedReddit: Reddit? = allRedditsById.removeValue(forKey: idStr)
                                             
-                                            if let letManagedObject = managedObject {
-                                                let redditManaged: RedditManaged = RedditManaged(withManagedObject: letManagedObject)
-                                                redditManaged.update(withDict: letDictOfValues)
+                                            if let letManagedReddit = managedReddit {
+                                                letManagedReddit.update(withDict: letDictOfValues)
                                             }else {
-                                                RedditDAO().save(withDict: letDictOfValues)
+                                                RedditDAO().insert(withDict: letDictOfValues)
                                             }
                                         }
                                     }
@@ -62,19 +77,18 @@ class ServiceDataManager: NSObject {
                 
                 // MARK: los reddits restantes deben ser eliminados junto con sus imagenes.
                 
-//                for (key, reddit) in allRedditsById {
-//                    FileManager().deleteFile(withName: key, fromFolder: Constants.FilesFolder)
-//                    RedditDAO().delete(reddit: reddit)
-//                }
+                //                for (key, reddit) in allRedditsById {
+                //                    FileManager().deleteFile(withName: key, fromFolder: Constants.FilesFolder)
+                //                    RedditDAO().delete(reddit: reddit)
+                //                }
                 
             }else {
                 NSLog("service response error: %@", response.error?.localizedDescription ?? "error without description")
             }
             
-            let arrayOfReddits: [NSManagedObject] = RedditDAO().get(redditsWithPredicate: nil)
+            let arrayOfReddits: [Reddit] = RedditDAO().get(objectsWithPredicate: nil) as! [Reddit]
             
             finishedBlock(arrayOfReddits)
         }
-        
     }
 }

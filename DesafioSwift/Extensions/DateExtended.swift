@@ -25,7 +25,7 @@ extension Date {
         
         let hoursSinceUtc: Double = Date().timeIntervalSince(dateUtc)
         
-        let daysInMonthRng: NSRange = NSCalendar(calendarIdentifier: NSCalendar.Identifier("gregorian"))!.range(of: NSCalendar.Unit.day, in: NSCalendar.Unit.month, for: Date())
+        let daysInMonthRng: NSRange = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)!.range(of: NSCalendar.Unit.day, in: NSCalendar.Unit.month, for: Date())
         
         let daysInMonth: Double = Double(daysInMonthRng.length)
         

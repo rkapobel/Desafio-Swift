@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tblReddits: UITableView!
     
-    var reddits: [NSManagedObject] = [NSManagedObject]()
+    var reddits: [Reddit] = [Reddit]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // MARK: Elijo actualizar siempre que la vista aparece. Los reddits cambian eventualmente.
         
-        ServiceDataManager().updateReddits { (redditsIn: [NSManagedObject]?) in
+        ServiceDataManager().updateReddits { (redditsIn: [Reddit]?) in
             if let letRedditsIn = redditsIn {
                 self.reddits = letRedditsIn
                 DispatchQueue.main.async {
@@ -49,7 +49,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell: RedditTableViewCell = tableView.dequeueReusableCell(withIdentifier: String(describing: RedditTableViewCell.self), for: indexPath) as! RedditTableViewCell
  
-        let reddit: NSManagedObject = reddits[indexPath.row] as! Reddit
+        let reddit: Reddit = reddits[indexPath.row]
     
         cell.updateCell(withReddit: reddit)
         

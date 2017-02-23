@@ -9,130 +9,59 @@
 import UIKit
 import CoreData
 
-class RedditDAO: NSObject {
+class RedditDAO: ParentDAO {
     
-    var managedContext: NSManagedObjectContext!
-
-    override init() {
-        super.init()
-        getContext()
+    init() {
+        super.init(entity: "Reddit")
     }
     
-    func getContext() {
-        let appDelegate =
-            UIApplication.shared.delegate as! AppDelegate
-        
-        managedContext = appDelegate.persistentContainer.viewContext
-    }
-    
-    func save(withDict dict: [String: Any]) {
+    func insert(withDict dict: [String: Any]) {
         
         let strId: String = dict["id"] as! String
-    
-        let managedReddits: [NSManagedObject] = get(redditsWithPredicate:"id = %@", values: strId)
+        
+        let managedReddits: [Reddit] = get(objectsWithPredicate:"id = %@", values: strId) as! [Reddit]
         
         if managedReddits.count > 0 {
             
-            let managedReddit: NSManagedObject = managedReddits[0]
+            let redditManaged: NSManagedObject = managedReddits[0]
             
-            managedReddit.setValue(strId, forKey: "id")
-            managedReddit.setValue(dict["author"] as! String, forKey: "author")
-            managedReddit.setValue(dict["title"] as! String, forKey: "title")
-            managedReddit.setValue(dict["subreddit_name_prefixed"] as! String, forKey: "subredditNamePrefixed")
-            managedReddit.setValue(dict["thumbnail"] as! String, forKey: "thumbnailSource")
-            managedReddit.setValue(dict["created_utc"] as! Double, forKey: "createdUtc")
-            managedReddit.setValue(dict["num_comments"] as! Int32, forKey: "numComments")
+            completeValues(dict: dict, redditManaged: redditManaged as! Reddit)
             
-            update()
+            save()
             
             return
         }
         
-        let entity =  NSEntityDescription.entity(forEntityName: "Reddit", in: managedContext)
-        
-        let redditManaged = NSManagedObject(entity: entity!, insertInto: managedContext)
-        
-        redditManaged.setValue(dict["id"] as! String, forKey: "id")
-        redditManaged.setValue(dict["author"] as! String, forKey: "author")
-        redditManaged.setValue(dict["title"] as! String, forKey: "title")
-        redditManaged.setValue(dict["subreddit_name_prefixed"] as! String, forKey: "subredditNamePrefixed")
-        redditManaged.setValue(dict["thumbnail"] as! String, forKey: "thumbnailSource")
-        redditManaged.setValue(dict["created_utc"] as! Double, forKey: "createdUtc")
-        redditManaged.setValue(dict["num_comments"] as! Int32, forKey: "numComments")
-    
-        do {
-            try managedContext.save()
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        }
+        insert(insertValuesCompletion: { (redditManaged) in
+            
+            completeValues(dict: dict, redditManaged: redditManaged as! Reddit)
+            
+        })
     }
     
-    func get(redditsWithPredicate predicate: String?, values: String ... ) -> [NSManagedObject] {
+    func getAllById() -> [String: Reddit] {
+        let allStoredObjects: [Reddit] = get(objectsWithPredicate: nil) as! [Reddit]
         
-        if let x:String = predicate {
-            guard values.count == x.countInstances(of: "%@", "%ld", "%d", "%f") else {
-                NSLog("condition for predicate was not fulfilled: number of values != #('%@')")
-                return []
-            }
-        }
- 
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Reddit")
+        var objectsById: [String: Reddit] = [String: Reddit]()
         
-        if let letPredicate = predicate {
-            fetchRequest.predicate = NSPredicate(format: letPredicate, argumentArray: values)
+        for object in allStoredObjects {
+            objectsById[object.id!] = object
         }
         
-        var reddits: [NSManagedObject] = []
-        
-        do {
-            let results =
-                try managedContext.fetch(fetchRequest)
-            reddits = results as! [NSManagedObject]
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
-        
-        return reddits
+        return objectsById
     }
     
-    func getAllById() -> [String: NSManagedObject] {
-        let allStoredReddits: [NSManagedObject] = get(redditsWithPredicate: nil)
-        
-        var redditsById: [String: NSManagedObject] = [String: NSManagedObject]()
-
-        for reddit in allStoredReddits {
-            redditsById[reddit.value(forKey: "id") as! String] = reddit
-        }
-        
-        return redditsById
-    }
-    
-    func redditExists(redditWithId id: String) -> Bool {
+    func exists(objectWithId id: String) -> Bool {
         var exists: Bool! = false
         
-        if get(redditsWithPredicate:"id = %@", values:id).count > 0 {
-           exists = true
+        if get(objectsWithPredicate:"id = %@", values:id).count > 0 {
+            exists = true
         }
         
         return exists
     }
     
-    func delete(reddit: NSManagedObject) {
-        
-        let appDelegate =
-            UIApplication.shared.delegate as! AppDelegate
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-
-        managedContext.delete(reddit)
-    }
-    
     func getNewReddit() -> Reddit {
-        let appDelegate =
-            UIApplication.shared.delegate as! AppDelegate
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
         let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName:"Reddit", in: managedContext)!
         
         let reddit: Reddit = Reddit(entity: entity, insertInto: managedContext)
@@ -140,11 +69,7 @@ class RedditDAO: NSObject {
         return reddit
     }
     
-    func update() {
-        do {
-            try managedContext.save()
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        }
+    func completeValues(dict: [String: Any], redditManaged: Reddit) {
+        redditManaged.update(withDict: dict)
     }
 }

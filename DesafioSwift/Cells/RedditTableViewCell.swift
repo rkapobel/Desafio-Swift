@@ -33,17 +33,18 @@ class RedditTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func updateCell(withReddit reddit: NSManagedObject) {
-        let redditManaged: RedditManaged = RedditManaged(withManagedObject: reddit)
+    func updateCell(withReddit reddit: Reddit) {
         
-        var thumbnailSourceValue: String = redditManaged.getThumbnailSource()
-        thumbnailSourceValue = redditManaged.getThumbnailSource()
-        let idValue: String = redditManaged.getId()
-        let authorValue: String = redditManaged.getAuthor()
-        let titleValue: String = redditManaged.getTitle()
-        let createdUtcValue: Double = redditManaged.getCreatedUtc()
-        let subredditNamePrefixedValue: String = redditManaged.getSubrreditNamePrefixed()
-        let numCommentsValue: UInt32 = redditManaged.getNumComments()
+        // MARK: si, por ahora estoy asumiendo que no son nil...pero podrian? esto lo veremos en el proximo episodio
+        // lo correcto seria hacer unwraping
+        
+        var thumbnailSourceValue: String = reddit.thumbnailSource!
+        let idValue: String = reddit.id!
+        let authorValue: String = reddit.author!
+        let titleValue: String = reddit.title!
+        let createdUtcValue: Double = reddit.createdUtc
+        let subredditNamePrefixedValue: String = reddit.subredditNamePrefixed!
+        let numCommentsValue: UInt32 = UInt32(reddit.numComments)
         
         if thumbnailSourceValue.characters.count > 0 {
             let image: UIImage? = FileManager().getImage(withName: idValue, inFolder: Constants.FilesFolder)
