@@ -49,6 +49,23 @@ class ServiceDataManager: NSObject {
             
             if let JSONData = response.data {
                 
+                if response.error != nil {
+                    NSLog("service response error: %@", response.error?.localizedDescription ?? "error without description")
+                    
+                    let alert: UIAlertController = UIAlertController()
+                    alert.title = "Reddit Update Error"
+                    // MARK: Los textos son en diferentes idiomas por ahora. Puede detectarse el tipo de error usando el atributo code.
+                    alert.message = "\(response.error?.localizedDescription ?? "some service error"): \n Los datos que vea pueden estar desactualizados"
+                    
+                    let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            
+                    alert.addAction(defaultAction);
+                    
+                    UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+                    
+                    return
+                }
+                
                 let dict: [String: Any]? = Dictionary().convertToDictionary(fromData: JSONData)
                 
                 var allRedditsById: [String: Reddit] = RedditDAO().getAllById()
