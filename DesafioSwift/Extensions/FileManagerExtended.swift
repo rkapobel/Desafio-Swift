@@ -2,7 +2,7 @@
 //  UIImageExtended.swift
 //  DesafioSwift
 //
-//  Created by Marcelo De Luca on 21/2/17.
+//  Created by Rodrigo Kapobel on 21/2/17.
 //  Copyright © 2017 Rodrigo Kapobel. All rights reserved.
 //
 

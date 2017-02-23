@@ -2,7 +2,7 @@
 //  RedditDAO.swift
 //  DesafioSwift
 //
-//  Created by Marcelo De Luca on 22/2/17.
+//  Created by Rodrigo Kapobel on 22/2/17.
 //  Copyright © 2017 Rodrigo Kapobel. All rights reserved.
 //
 
