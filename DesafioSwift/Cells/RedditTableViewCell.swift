@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import CoreData
 
 class RedditTableViewCell: UITableViewCell {
     
@@ -38,7 +36,9 @@ class RedditTableViewCell: UITableViewCell {
     */
     func updateCell(withReddit reddit: Reddit) {
         
-        var thumbnailSourceValue: String = reddit.thumbnailSource!
+        // MARK: Las entidades no tienen valores en nil. Una entidad se inicializa si o si con algun valor a pesar de que los parámetros son optionals.
+        
+        let thumbnailSourceValue: String = reddit.thumbnailSource!
         let idValue: String = reddit.id!
         let authorValue: String = reddit.author!
         let titleValue: String = reddit.title!
@@ -46,29 +46,18 @@ class RedditTableViewCell: UITableViewCell {
         let subredditNamePrefixedValue: String = reddit.subredditNamePrefixed!
         let numCommentsValue: UInt32 = UInt32(reddit.numComments)
         
-        if thumbnailSourceValue.characters.count > 0 {
-            let image: UIImage? = FileManager().getImage(withName: idValue, inFolder: Constants.FilesFolder)
-            
-            if let letImage = image {
-                imgViewThumbnail?.image = letImage
-            }else {
-                Alamofire.request(thumbnailSourceValue).responseJSON { response in
-                    let data: Data? = response.data
-                    
-                    let image: UIImage? = UIImage(data: data!)
-                    
-                    if let letImage2 = image {
-                        self.imgViewThumbnail?.image = letImage2
-                        FileManager().saveFile(data: data!, withFileName: idValue, inFolder: Constants.FilesFolder)
-                    }else {
-                        self.imgViewThumbnail?.image = UIImage(imageLiteralResourceName: "no-image")
-                    }
-                }
-            }
-        }
+        self.imgViewThumbnail.updateImage(withSource: thumbnailSourceValue, andId: idValue)
 
         lblTitle?.text = titleValue
         
+        updateInfo(withCreatedUtc: createdUtcValue, authorValue: authorValue, andSubredditNamePrefixedValue: subredditNamePrefixedValue)
+    
+        lblCommentsCount?.text = "\(numCommentsValue) comentarios"
+    }
+    
+    func updateInfo(withCreatedUtc createdUtcValue: Double,
+                    authorValue: String,
+                    andSubredditNamePrefixedValue subredditNamePrefixedValue: String) {
         let blackFont = [ NSForegroundColorAttributeName: UIColor.black ]
         let blueFont = [ NSForegroundColorAttributeName: UIColor.blue ]
         
@@ -76,14 +65,12 @@ class RedditTableViewCell: UITableViewCell {
         
         let secondStr: NSMutableAttributedString = NSMutableAttributedString(string: "\(authorValue) ", attributes: blueFont)
         
-        let threeStr: NSMutableAttributedString = NSMutableAttributedString(string: "\(subredditNamePrefixedValue))", attributes: blueFont)
+        let thirthStr: NSMutableAttributedString = NSMutableAttributedString(string: "\(subredditNamePrefixedValue))", attributes: blueFont)
         
         secondStr.append(NSAttributedString(string: "a "))
-        secondStr.append(threeStr)
+        secondStr.append(thirthStr)
         firstStr.append(secondStr)
         
         lblInfo?.attributedText = firstStr
-        
-        lblCommentsCount?.text = "\(numCommentsValue) comentarios"
     }
 }

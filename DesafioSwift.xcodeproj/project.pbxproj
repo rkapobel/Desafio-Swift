@@ -26,6 +26,7 @@
 		23EE42D81E5CE3BA00AF3379 /* FileManagerExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE42D71E5CE3BA00AF3379 /* FileManagerExtended.swift */; };
 		93F46A957D5D24014B5FEE40 /* Pods_DesafioSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC360211E94767A43B77CB54 /* Pods_DesafioSwift.framework */; };
 		E63F2E961E5D4B5D001DA8D5 /* DictionaryExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F2E951E5D4B5D001DA8D5 /* DictionaryExtended.swift */; };
+		E649915D00000A7B0098DB47 /* UIImageViewExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649915C00000A7B0098DB47 /* UIImageViewExtended.swift */; };
 		E6727C8E1E5E7E830042697A /* ParentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6727C8D1E5E7E830042697A /* ParentDAO.swift */; };
 		E6727C901E5E85B40042697A /* PaginationDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6727C8F1E5E85B40042697A /* PaginationDAO.swift */; };
 		E698CF301E5D10FE00459A06 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698CF2F1E5D10FE00459A06 /* Constants.swift */; };
@@ -77,6 +78,7 @@
 		AC360211E94767A43B77CB54 /* Pods_DesafioSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81B51ED4E5CC6EB5E2D2433 /* Pods-DesafioSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DesafioSwift/Pods-DesafioSwift.release.xcconfig"; sourceTree = "<group>"; };
 		E63F2E951E5D4B5D001DA8D5 /* DictionaryExtended.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtended.swift; sourceTree = "<group>"; };
+		E649915C00000A7B0098DB47 /* UIImageViewExtended.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtended.swift; sourceTree = "<group>"; };
 		E6727C8D1E5E7E830042697A /* ParentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentDAO.swift; sourceTree = "<group>"; };
 		E6727C8F1E5E85B40042697A /* PaginationDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginationDAO.swift; sourceTree = "<group>"; };
 		E698CF2F1E5D10FE00459A06 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				23EE42D71E5CE3BA00AF3379 /* FileManagerExtended.swift */,
 				E63F2E951E5D4B5D001DA8D5 /* DictionaryExtended.swift */,
 				2387AACD1E5DE809000FF28D /* StringExtended.swift */,
+				E649915C00000A7B0098DB47 /* UIImageViewExtended.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				234500D91E5CCF9500954BC8 /* DateExtended.swift in Sources */,
 				2387AACC1E5DD9E5000FF28D /* RedditDAO.swift in Sources */,
 				234500DD1E5CCFA200954BC8 /* RedditTableViewCell.swift in Sources */,
+				E649915D00000A7B0098DB47 /* UIImageViewExtended.swift in Sources */,
 				E698CF301E5D10FE00459A06 /* Constants.swift in Sources */,
 				2387AAD21E5E363B000FF28D /* RedditExtension.swift in Sources */,
 			);

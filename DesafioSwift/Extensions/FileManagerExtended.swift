@@ -16,7 +16,7 @@ extension FileManager {
 
     func firstPath() -> String {
         
-        // MARK: No puede dar nil o vacio
+        // MARK: No puede dar nil o vacío
         
         return FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)[0].path
     }

@@ -80,7 +80,7 @@ class ServiceDataManager: NSObject {
                     
                     if let letDictDataOne = dictDataOne {
                         
-                        let arrChildrens = letDictDataOne["children"]
+                        let arrChildrens: [Any]? = letDictDataOne["children"] as? [Any]
                         
                         if let letArrChildrens = arrChildrens {
                             
