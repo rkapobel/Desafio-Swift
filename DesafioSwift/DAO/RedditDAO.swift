@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 /**
  La entidad Reddit y el manager RedditDAO estan pensados para controlar la consitencia total de los datos.
