@@ -90,7 +90,7 @@ class ParentDAO: NSObject {
      
      La cantidad de espeficiadores de formato de predicate tiene que ser igual a la cantidad de valores en values o el resultado será un arreglo vacío.
      */
-    func get(objectsWithPredicate predicate: String?, values: String ...) -> [NSManagedObject] {
+    func get(objectsWithPredicate predicate: String?, values: Any ...) -> [NSManagedObject] {
         
         if let x:String = predicate {
             guard values.count == x.countInstances(of: "%@", "%ld", "%d", "%f") else {
