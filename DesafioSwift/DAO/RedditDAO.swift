@@ -70,7 +70,7 @@ class RedditDAO: ParentDAO {
      Devuelve un Reddit existente para el id ingresado o nil si no hay coincidencia.
      */
     func get(byId id: String) -> Reddit? {
-        let reddits: [Reddit] = get(objectsWithPredicate: "id = %@", values: id) as! [Reddit]
+        let reddits: [Reddit] = get(objectsWithPredicate:"id = %@", values: id) as! [Reddit]
         
         if reddits.count > 0 {
             return reddits[0]
