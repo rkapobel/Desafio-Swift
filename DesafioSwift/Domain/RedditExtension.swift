@@ -27,6 +27,6 @@ extension Reddit {
         self.numComments = dict["num_comments"] as! Int32
         self.score = dict["score"] as! Int32
         
-        RedditDAO().save()
+        RedditDAO().syncSave()
     }
 }

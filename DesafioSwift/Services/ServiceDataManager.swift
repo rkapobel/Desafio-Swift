@@ -24,7 +24,7 @@ class ServiceDataManager: NSObject {
         var withAfter: String = ""
         
         if (pag.lastId?.characters.count)! > 0 {
-            withAfter = "&after=t3_\(pag.lastId)"
+            withAfter = "&after=t3_\(String(describing: pag.lastId))"
         }
     
         callUpdate(finishedBlock, withUrl: Constants.RedditService.appending("?count=\(Constants.redditsCount)\(withAfter)"))
@@ -113,7 +113,7 @@ class ServiceDataManager: NSObject {
                 
                 for (key, reddit) in allRedditsById {
                     FileManager().deleteFile(withName: key, fromFolder: Constants.FilesFolder)
-                    RedditDAO().delete(object: reddit)
+                    RedditDAO().delete(managedObject: reddit)
                 }
                 
             }else {

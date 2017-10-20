@@ -35,13 +35,13 @@ class PaginationDAO: ParentDAO {
             return (managedPaginations[0], State.existent)
         }
         
-        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName:String(describing: Pagination.self), in: managedContext)!
+        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName:String(describing: Pagination.self), in: persistentContainer.viewContext)!
         
-        let pag: Pagination = Pagination(entity: entity, insertInto: managedContext)
+        let pag: Pagination = Pagination(entity: entity, insertInto: persistentContainer.viewContext)
         
         pag.lastId = ""
         
-        save()
+        self.syncSave()
         
         return (pag, State.new)
     }

@@ -38,16 +38,13 @@ class RedditDAO: ParentDAO {
             let redditManaged: NSManagedObject = managedReddits[0]
             
             completeValues(dict: dict, redditManaged: redditManaged as! Reddit)
-            
-            save()
-            
+
             return
         }
         
-        insert(insertValuesCompletion: { (redditManaged) in
-            
-            completeValues(dict: dict, redditManaged: redditManaged as! Reddit)
-            
+        insert(insertValuesCompletion: { (redditManagedID) in
+            let redditManaged: NSManagedObject = self.persistentContainer.viewContext.object(with: redditManagedID)
+            self.completeValues(dict: dict, redditManaged: redditManaged as! Reddit)
         })
     }
     
@@ -96,9 +93,9 @@ class RedditDAO: ParentDAO {
      Crea un reddit y lo inserta en la entidad. Debe hacerse save() manualmente para lograr la persistencia de los datos, de otra manera la misma no esta asegurada.
      */
     func getNewReddit() -> Reddit {
-        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName:String(describing: Reddit.self), in: managedContext)!
+        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName:String(describing: Reddit.self), in: persistentContainer.viewContext)!
         
-        let reddit: Reddit = Reddit(entity: entity, insertInto: managedContext)
+        let reddit: Reddit = Reddit(entity: entity, insertInto: persistentContainer.viewContext)
         
         return reddit
     }
