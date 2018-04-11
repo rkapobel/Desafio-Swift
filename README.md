@@ -1,12 +1,14 @@
 # DesafioSwift
+
 Reddit Client
-Cliente de Reddit que muestra solamente las 25 primeras entradas del servicio incluyendo las siguientes caracteristicas:
 
-* Título
-* Autor
-* Fecha de la entrada
-* Thumbnail, en caso de estar disponible.
-* Cantidad de comentarios
-* Subreddit
+Client of Reddit that shows only the first 25 entries of the web page including the next features:
 
-La app funciona sin internet ya que utiliza CoreData para almacenar las reddits. Aunque los datos visualizados pueden ser desactualizados.
+* Title
+* Author
+* Date of the entry
+* Thumbnail, in case of existing.
+* Number of comments
+* Subreddits
+
+The app works without internet because it uses CoreData to store some of the reddits. It should be noted that the reddits displayed in this case were not updated.
